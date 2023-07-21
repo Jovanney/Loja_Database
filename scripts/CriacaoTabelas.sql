@@ -25,19 +25,29 @@ Create table Usuario (
 
 CREATE TABLE Telefone(
     numero number,
-    email_Usuario VARCHAR(50) NOT NULL,
+    email_usuario VARCHAR(50) NOT NULL,
    
     CONSTRAINT telefone_pk PRIMARY KEY (numero, email_usuario),
     CONSTRAINT email_usuario_fk FOREIGN KEY (email_usuario) REFERENCES Usuario (email));
+
+--Criando Cargo_func
+
+CREATE TABLE Cargo_func(
+    cargo  VARCHAR(50),
+    salario VARCHAR(50),
+
+    CONSTRAINT cargo_pk PRIMARY KEY (cargo));
 
 --Criando tabela Cliente
 
 CREATE TABLE Cliente(
     email_usuario VARCHAR(50),
+    cargo VARCHAR(50),
     data_criacao_Conta DATE NOT NULL,
 
-    CONSTRAINT cliente_pk PRIMARY KEY (email_Usuario),
-    CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email));
+    CONSTRAINT cliente_pk PRIMARY KEY (email_usuario),
+    CONSTRAINT cargo_fk FOREIGN KEY (cargo) REFERENCES Cargo_func (cargo));
+    CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email);
 
 --Criando tabela Cargos
 
@@ -75,14 +85,15 @@ CREATE TABLE Ordem_de_servico(
     CONSTRAINT email_func_fk FOREIGN KEY (email_func) REFERENCES Funcionario(email_funcionario));
 
 -- Criando Tabela Transportadora
-CREATE TABLE Transportadora
-    (cnpj varchar2 (14),
+CREATE TABLE Transportadora(
+    nome VARCHAR2(50),
+    cnpj VARCHAR2(14),
 	CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
 
 
 -- Criando Tabela Pedido
-CREATE TABLE Pedido
-    (id_pedido number(10),
+CREATE TABLE Pedido(
+    id_pedido number(10),
 	descricao varchar2(100),
 	preco number(8,2),
 	data_pedido timestamp NOT NULL,
@@ -101,8 +112,8 @@ CREATE TABLE Pedido
 
 
 -- Criando Tabela Produto
-CREATE TABLE Produto
-    (id_produto number(10),
+CREATE TABLE Produto(
+    id_produto number(10),
 	quantidade number(3),
 	nome varchar2(100),
 	preco number(7,2),
@@ -116,8 +127,8 @@ CREATE TABLE Produto
 
 --Criando tabela Assistencia
 
-CREATE TABLE Assistencia
-   (cnpj VARCHAR2(14),
+CREATE TABLE Assistencia(
+    cnpj VARCHAR2(14),
     data_inicio DATE NOT NULL,
     descricao VARCHAR2(50) NOT NULL,
     status VARCHAR2(50) NOT NULL,
@@ -127,8 +138,8 @@ CREATE TABLE Assistencia
 
 --Criando tabela Tipo da Assistencia
 
-CREATE TABLE TipoAssistencia
-   (tipo_assistencia VARCHAR2(50),
+CREATE TABLE TipoAssistencia(
+    tipo_assistencia VARCHAR2(50),
     cnpj_assistencia VARCHAR2(14),
     
     CONSTRAINT tipoassistencia_pkey PRIMARY KEY (tipo_assistencia, cnpj_assistencia),
@@ -152,7 +163,7 @@ CREATE TABLE Protocolo_de_Atendimento (
     data_inicio DATE NOT NULL,
     data_conclusao DATE NOT NULL,
     
-    CONSTRAINT protocolo_pk PRIMARY KEY (codigo_protocolo),
+    CONSTRAINT protocolo_pk PRIMARY KEY (codigo_protocolo, cnpj),
     CONSTRAINT desc_pro_fk FOREIGN KEY (desc_pro) REFERENCES Descricao(descricao_n),
     CONSTRAINT cnpj_fk FOREIGN KEY (cnpj) REFERENCES Assistencia(cnpj));
 
