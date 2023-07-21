@@ -166,3 +166,26 @@ BEGIN
   INTO   :new.descricao_n
   FROM   dual;
 END;
+
+CREATE TABLE Relatorio(
+    codigo_relatorio VARCHAR2(50)
+    email_funcionario VARCHAR2(50),
+    protocolo VARCHAR2(50),
+    descricao VARCHAR(50),
+
+    CONSTRAINT reltorio_pk PRIMARY KEY (codigo_relatorio),
+    CONSTRAINT email_funcionario_fk FOREIGN KEY (email_funcionario) REFERENCES Servico_a_ser_Realizado(email_funcionário),
+    CONSTRAINT protocolo_fk FOREIGN KEY (protocolo) REFERENCES Servico_a_ser_Realizado(protocolo_serviço));
+
+CREATE TABLE Servico(
+    codigo_servico VARCHAR2(50),
+    email_funcionario VARCHAR2(50),
+    protocolo VARCHAR2(50),
+    status VARCHAR(20),
+    data_inicio date,
+    data_conclusao date,
+
+    CONSTRAINT servico_pk PRIMARY KEY (codigo_servico),
+    CONSTRAINT email_funcionario_fk FOREIGN KEY (email_funcionario) REFERENCES Servico_a_ser_Realizado(email_funcionário),
+    CONSTRAINT protocolo_fk FOREIGN KEY (protocolo) REFERENCES Servico_a_ser_Realizado(protocolo_serviço));
+
