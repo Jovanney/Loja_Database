@@ -39,6 +39,40 @@ CREATE TABLE Cliente(
     CONSTRAINT cliente_pk PRIMARY KEY (email_Usuario),
     CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email));
 
+--Criando tabela Cargos
+
+CREATE TABLE Cargos(
+    cargo VARCHAR2(50) NOT NULL,
+    salario VARCHAR2(50) NOT NULL,
+
+    CONSTRAINT cargo_pk PRIMARY KEY (cargo));
+
+
+--Criando tabela Funcionario
+
+CREATE TABLE Funcionario(
+    email_funcionario VARCHAR(50) NOT NULL,
+    cargo_func VARCHAR(50),
+    data_contratacao  timestamp NOT NULL,
+    cad_supv VARCHAR(50),
+
+    CONSTRAINT funcionario_pk PRIMARY KEY (email_funcionario),
+    CONSTRAINT email_funcionario_fk FOREIGN KEY (email_funcionario) REFERENCES Usuario (email),
+    CONSTRAINT email_supv_fk FOREIGN KEY (cad_supv) REFERENCES Funcionario(email_funcionario),
+    CONSTRAINT cargo_fk FOREIGN KEY (cargo_func) REFERENCES Cargos(cargo));
+
+
+--Criando tabela Ordem_de_servico
+
+CREATE TABLE Ordem_de_servico(
+    protocolo VARCHAR2(50) NOT NULL,
+    email_func VARCHAR2(50),
+    descricao VARCHAR2(100),
+    produto VARCHAR2(50) NOT NULL,
+    data_de_emissao timestamp NOT NULL,
+
+    CONSTRAINT protocolo_pk PRIMARY KEY (protocolo),
+    CONSTRAINT email_func_fk FOREIGN KEY (email_func) REFERENCES Funcionario(email_funcionario));
 
 -- Criando Tabela Transportadora
 CREATE TABLE Transportadora
