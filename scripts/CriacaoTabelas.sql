@@ -30,6 +30,15 @@ CREATE TABLE Telefone(
     CONSTRAINT Telefone_pk PRIMARY KEY (Numero, Email_usuario),
     CONSTRAINT Email_usuario_fk FOREIGN KEY (Email_usuario) REFERENCES Usuario (Email));
 
+--Criando tabela Cliente
+
+CREATE TABLE Cliente(
+    Email_Usuario VARCHAR(50),
+    Data_Criacao_Conta DATE NOT NULL,
+
+    CONSTRAINT Cliente_pk PRIMARY KEY (Email_Usuario),
+    CONSTRAINT Email_Usuario_C_fk FOREIGN KEY (Email_Usuario) REFERENCES Usuario (Email));
+
 --Criando tabela Assistencia
 
 CREATE TABLE Assistencia
