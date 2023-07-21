@@ -39,6 +39,47 @@ CREATE TABLE Cliente(
     CONSTRAINT cliente_pk PRIMARY KEY (email_Usuario),
     CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email));
 
+
+-- Criando Tabela Transportadora
+CREATE TABLE Transportadora
+    (cnpj varchar2 (14),
+	CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
+
+
+-- Criando Tabela Pedido
+CREATE TABLE Pedido
+    (id_pedido number(10),
+descricao varchar2(100),
+preco number(8,2),
+data_pedido timestamp NOT NULL,
+cliente varchar2(50) NOT NULL,
+	destino varchar2(50),
+	local_saida varchar2(50),
+data_saida timestamp,
+local_atual varchar2(50),
+	data_entrega timestamp,
+	transportadora varchar2(14),
+frete number(5,2),
+status varchar2(20),
+	CONSTRAINT pedido_pkey PRIMARY KEY (id_pedido),
+	CONSTRAINT pedido_fkey1 FOREIGN KEY (cliente) REFERENCES Usuario (email),
+	CONSTRAINT pedido_fkey2 FOREIGN KEY (transportadora) REFERENCES Transportadora (cnpj));
+
+
+-- Criando Tabela Produto
+CREATE TABLE Produto
+    (id_produto number(20),
+	quantidade number(20),
+	nome varchar2(100),
+	preco number(7,2),
+	data_estoque timestamp,
+	caracteristicas varchar2(200),
+	marca varchar2(20),
+	categoria varchar2(20),
+	pedido number (20) NOT NULL,
+	CONSTRAINT produto_pkey PRIMARY KEY (id_produto),
+	CONSTRAINT produto_fkey FOREIGN KEY (pedido) REFERENCES Pedido (id_pedido));
+
 --Criando tabela Assistencia
 
 CREATE TABLE Assistencia
