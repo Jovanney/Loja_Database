@@ -15,7 +15,7 @@ CREATE TABLE TipoAssistencia
    (Tipo_Assistencia VARCHAR2(50) NOT NULL,
     Cnpj_Assistencia VARCHAR2(14) NOT NULL,
     
-    CONSTRAINT TipoAssistencia_pkey PRIMARY KEY (Tipo_Assistencia),
+    CONSTRAINT TipoAssistencia_pkey PRIMARY KEY (Tipo_Assistencia, Cnpj_Assistencia),
     CONSTRAINT TipoAssistencia_fkey FOREIGN KEY (Cnpj_Assistencia) REFERENCES Assistencia(Cnpj));
 
 --Criando Tabela Protocolo de Atendimento e descrição com pk com autoincremento
