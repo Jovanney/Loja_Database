@@ -1,3 +1,201 @@
+--Inserindo Endereço
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('56800-000','RUA NOVA', 'RUA 2');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-111','Bairro A', 'Rua A');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-222','Bairro B', 'Rua B');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('33333-333','Bairro C', 'Rua C');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('44444-444','Bairro D', 'Rua D');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('55555-555','Bairro E', 'Rua E');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('66666-666','Bairro F', 'Rua F');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('77777-777','Bairro G', 'Rua G');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('88888-888','Bairro H', 'Rua H');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('99999-999','Bairro I', 'Rua I');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('00000-000','Bairro J', 'Rua J');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11112-112','Bairro K', 'Rua K');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11113-113','Bairro L', 'Rua L');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11114-114','Bairro M', 'Rua M');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-115','Bairro N', 'Rua N');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-116','Bairro O', 'Rua O');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-117','Bairro P', 'Rua P');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-118','Bairro Q', 'Rua Q');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-119','Bairro R', 'Rua R');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('11111-110','Bairro S', 'Rua S');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-221','Bairro T', 'Rua T');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-223','Bairro U', 'Rua U');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-224','Bairro V', 'Rua V');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-225','Bairro W', 'Rua W');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-226','Bairro X', 'Rua X');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-227','Bairro Y', 'Rua Y');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-228','Bairro Z', 'Rua Z');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-229','Bairro AB', 'Rua AB');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('22222-220','Bairro AC', 'Rua AC');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('33333-331','Bairro AD', 'Rua AD');
+
+INSERT INTO Endereco (Cep, Bairro, Rua) VALUES ('33333-332','Bairro AD', 'Rua AD');
+
+--Inserindo Usuário
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaA@gmail.com','AAAAAA','Pessoa A', 18, '56800-000', '1', 'perto de A');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaB@gmail.com','BBBBBB','Pessoa B', 19, '11111-111', '2', 'perto de B');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaC@gmail.com','CCCCCC','Pessoa C', 20, '22222-222', '3', 'perto de C');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaD@gmail.com','DDDDDD','Pessoa D', 21, '33333-333', '4', 'perto de D');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaE@gmail.com','EEEEEE','Pessoa E', 22, '44444-444', '5', 'perto de E');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaF@gmail.com','FFFFFF','Pessoa F', 23, '55555-555', '6', 'perto de F');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaG@gmail.com','GGGGGG','Pessoa G', 24, '66666-666', '7', 'perto de G');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaH@gmail.com','HHHHHH','Pessoa H', 25, '77777-777', '8', 'perto de H');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaI@gmail.com','IIIIII','Pessoa I', 26, '88888-888', '9', 'perto de I');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaJ@gmail.com','JJJJJJ','Pessoa J', 27, '99999-999', '10', 'perto de J');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaK@gmail.com','KKKKKK','Pessoa K', 28, '00000-000', '11', 'perto de K');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaL@gmail.com','LLLLLL','Pessoa L', 29, '11112-112', '12', 'perto de L');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaM@gmail.com','MMMMMM','Pessoa M', 30, '11113-113', '13', 'perto de M');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaN@gmail.com','NNNNNN','Pessoa N', 31, '11114-114', '14', 'perto de N');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaO@gmail.com','OOOOOO','Pessoa O', 31, '11111-115', '15', 'perto de O');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaP@gmail.com','PPPPPP','Pessoa P', 32, '11111-116', '16', 'perto de P');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaQ@gmail.com','QQQQQQ','Pessoa Q', 33, '11111-117', '17', 'perto de Q');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaR@gmail.com','RRRRRR','Pessoa R', 34, '11111-118', '18', 'perto de R');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaS@gmail.com','SSSSSS','Pessoa S', 35, '11111-119', '19', 'perto de S');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaT@gmail.com','TTTTTT','Pessoa T', 36, '11111-110', '20', 'perto de T');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaU@gmail.com','UUUUUU','Pessoa U', 36, '22222-221', '21', 'perto de U');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaV@gmail.com','VVVVVV','Pessoa V', 36, '22222-223', '22', 'perto de V');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaX@gmail.com','XXXXXX','Pessoa X', 36, '22222-224', '23', 'perto de X');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaY@gmail.com','YYYYYY','Pessoa Y', 18, '22222-225', '24', 'perto de Z');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaW@gmail.com','WWWWWW','Pessoa W', 35, '22222-226', '25', 'perto de W');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaZ@gmail.com','ZZZZZZ','Pessoa Z', 35, '22222-227', '26', 'perto de Z');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaAB@gmail.com','ABABAB','Pessoa AB', 37, '22222-228', '27', 'perto de AB');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaAC@gmail.com','ACACAC','Pessoa AC', 35, '22222-229', '28', 'perto de AC');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaAD@gmail.com','ADADAD','Pessoa AD', 35, '22222-220', '29', 'perto de AD');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaAE@gmail.com','AEAEAE','Pessoa AE', 35, '33333-331', '30', 'perto de AE');
+
+INSERT INTO Usuario (Email, Senha, Nome, Idade, Cep, Numero, Complemento ) VALUES ('pessoaAF@gmail.com','AFAFAF','Pessoa AF', 35, '33333-332', '31', 'perto de AF');
+
+--Inserindo Telefone
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9981815244,'pessoaA@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111111,'pessoaB@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222222,'pessoaC@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333333,'pessoaD@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9444444444,'pessoaE@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9555555555,'pessoaF@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9666666666,'pessoaG@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9777777777,'pessoaH@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9888888888,'pessoaI@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9000000000,'pessoaJ@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111112,'pessoaK@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111113,'pessoaL@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111114,'pessoaM@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111115,'pessoaN@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111116,'pessoaO@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111117,'pessoaP@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111118,'pessoaP@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111119,'pessoaP@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9111111110,'pessoaQ@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222221,'pessoaR@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222223,'pessoaS@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222224,'pessoaT@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222225,'pessoaU@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222226,'pessoaV@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222227,'pessoaW@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222228,'pessoaX@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222229,'pessoaY@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9222222220,'pessoaZ@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333331,'pessoaAB@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333332,'pessoaAC@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333334,'pessoaAC@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333335,'pessoaAD@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333336,'pessoaAE@gmail.com');
+
+INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333337,'pessoaAF@gmail.com');
+
 --Inserindo Assistencia 
 
 INSERT INTO Assistencia (Cnpj, Data_Inicio, Descricao, Status, Equipamento)
