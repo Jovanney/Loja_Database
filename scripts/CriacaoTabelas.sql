@@ -1,85 +1,85 @@
 --Criando tabela Endereco
 
 Create table Endereco (
-    Cep VARCHAR2 (50),
-    Bairro VARCHAR2(50),
-    Rua VARCHAR2(50),
+    cep VARCHAR2 (50),
+    bairro VARCHAR2(50),
+    rua VARCHAR2(50),
     
-    CONSTRAINT Endereço_pk PRIMARY KEY (Cep));
+    CONSTRAINT endereço_pk PRIMARY KEY (cep));
 
 --Criando tabela Usuario
 
 Create table Usuario (
-    Email VARCHAR2(50),
-    Senha VARCHAR2(50) NOT NULL,
-    Nome VARCHAR2(50) NOT NULL,
-    Idade Number,
-    Cep VARCHAR2 (50) NOT NULL,
-    Numero VARCHAR2(50),
-    Complemento VARCHAR2(50),
+    email VARCHAR2(50),
+    senha VARCHAR2(50) NOT NULL,
+    nome VARCHAR2(50) NOT NULL,
+    idade Number,
+    cep VARCHAR2 (50) NOT NULL,
+    numero VARCHAR2(50),
+    complemento VARCHAR2(50),
 
-    CONSTRAINT Usuario_pk PRIMARY KEY (Email),
-    CONSTRAINT Cep_fk FOREIGN KEY (Cep) REFERENCES Endereco (Cep));
+    CONSTRAINT usuario_pk PRIMARY KEY (email),
+    CONSTRAINT cep_fk FOREIGN KEY (cep) REFERENCES Endereco (cep));
 
 --Criando tabela Telefone
 
 CREATE TABLE Telefone(
-    Numero number,
-    Email_Usuario VARCHAR(50) NOT NULL,
+    numero number,
+    email_Usuario VARCHAR(50) NOT NULL,
    
-    CONSTRAINT Telefone_pk PRIMARY KEY (Numero, Email_usuario),
-    CONSTRAINT Email_usuario_fk FOREIGN KEY (Email_usuario) REFERENCES Usuario (Email));
+    CONSTRAINT telefone_pk PRIMARY KEY (numero, email_usuario),
+    CONSTRAINT email_usuario_fk FOREIGN KEY (email_usuario) REFERENCES Usuario (email));
 
 --Criando tabela Cliente
 
 CREATE TABLE Cliente(
-    Email_Usuario VARCHAR(50),
-    Data_Criacao_Conta DATE NOT NULL,
+    email_usuario VARCHAR(50),
+    data_criacao_Conta DATE NOT NULL,
 
-    CONSTRAINT Cliente_pk PRIMARY KEY (Email_Usuario),
-    CONSTRAINT Email_Usuario_C_fk FOREIGN KEY (Email_Usuario) REFERENCES Usuario (Email));
+    CONSTRAINT cliente_pk PRIMARY KEY (email_Usuario),
+    CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email));
 
 --Criando tabela Assistencia
 
 CREATE TABLE Assistencia
-   (Cnpj VARCHAR2(14),
-    Data_Inicio DATE NOT NULL,
-    Descricao VARCHAR2(50) NOT NULL,
-    Status VARCHAR2(50) NOT NULL,
-    Equipamento VARCHAR2(50) NOT NULL,
+   (cnpj VARCHAR2(14),
+    data_inicio DATE NOT NULL,
+    descricao VARCHAR2(50) NOT NULL,
+    status VARCHAR2(50) NOT NULL,
+    equipamento VARCHAR2(50) NOT NULL,
 
-    CONSTRAINT Assistencia_pkey PRIMARY KEY (Cnpj));
+    CONSTRAINT assistencia_pkey PRIMARY KEY (cnpj));
 
 --Criando tabela Tipo da Assistencia
 
 CREATE TABLE TipoAssistencia
-   (Tipo_Assistencia VARCHAR2(50),
-    Cnpj_Assistencia VARCHAR2(14),
+   (tipo_assistencia VARCHAR2(50),
+    cnpj_assistencia VARCHAR2(14),
     
-    CONSTRAINT TipoAssistencia_pkey PRIMARY KEY (Tipo_Assistencia, Cnpj_Assistencia),
-    CONSTRAINT TipoAssistencia_fkey FOREIGN KEY (Cnpj_Assistencia) REFERENCES Assistencia(Cnpj));
+    CONSTRAINT tipoassistencia_pkey PRIMARY KEY (tipo_assistencia, cnpj_assistencia),
+    CONSTRAINT tipoassistencia_fkey FOREIGN KEY (cnpj_Assistencia) REFERENCES Assistencia(cnpj));
 
 --Criando Tabela Protocolo de Atendimento e descrição com pk com autoincremento
 
 CREATE SEQUENCE descricao_seq;
 
 CREATE TABLE Descricao
-   (Descricao_n NUMBER,
-    Acoes_Tomadas VARCHAR2(50) NOT NULL,
+   (descricao_n NUMBER,
+    acoes_tomadas VARCHAR2(50) NOT NULL,
     
-    CONSTRAINT Descricao_pkey PRIMARY KEY (Descricao_n));
+    CONSTRAINT descricao_pkey PRIMARY KEY (descricao_n));
 
 CREATE TABLE Protocolo_de_Atendimento (
-    Codigo_Protocolo VARCHAR2(50),
-    Cnpj VARCHAR2(14),
-    Desc_Pro NUMBER,
-    Acoes_Tomadas VARCHAR2(50) NOT NULL,
-    Data_Inicio DATE NOT NULL,
-    Data_Conclusao DATE NOT NULL,
+    codigo_Protocolo VARCHAR2(50),
+    cnpj VARCHAR2(14),
+    desc_Pro NUMBER,
+    acoes_tomadas VARCHAR2(50) NOT NULL,
+    data_inicio DATE NOT NULL,
+    data_conclusao DATE NOT NULL,
     
-    CONSTRAINT Protocolo_pk PRIMARY KEY (Codigo_Protocolo),
-    CONSTRAINT Desc_Pro_fk FOREIGN KEY (Desc_Pro) REFERENCES Descricao(Descricao_n),
-    CONSTRAINT Cnpj_fk FOREIGN KEY (Cnpj) REFERENCES Assistencia(Cnpj));
+    CONSTRAINT protocolo_pk PRIMARY KEY (codigo_protocolo),
+    CONSTRAINT desc_pro_fk FOREIGN KEY (desc_pro) REFERENCES Descricao(descricao_n),
+    CONSTRAINT cnpj_fk FOREIGN KEY (cnpj) REFERENCES Assistencia(cnpj));
 
 CREATE OR REPLACE TRIGGER descricao_bir 
 
