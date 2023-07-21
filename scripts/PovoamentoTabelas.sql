@@ -196,6 +196,40 @@ INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333336,'pessoaAE@gmail
 
 INSERT INTO Telefone (Numero, Email_Usuario ) VALUES (9333333337,'pessoaAF@gmail.com');
 
+--Inserindo Cliente
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaA@gmail.com', TO_DATE('2017-10-12', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaB@gmail.com', TO_DATE('2000-01-20', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaC@gmail.com', TO_DATE('1975-01-31', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaD@gmail.com', TO_DATE('2002-03-19', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaE@gmail.com', TO_DATE('1999-03-25', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaF@gmail.com', TO_DATE('2003-03-26', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaG@gmail.com', TO_DATE('1988-04-01', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaH@gmail.com', TO_DATE('2001-04-06', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaI@gmail.com', TO_DATE('1998-04-18', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaJ@gmail.com', TO_DATE('2001-05-10', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaK@gmail.com', TO_DATE('2000-01-20', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaL@gmail.com', TO_DATE('2000-06-04', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaM@gmail.com', TO_DATE('2000-01-20', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaN@gmail.com', TO_DATE('1979-06-04', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaO@gmail.com', TO_DATE('1979-09-18', 'YYYY-MM-DD'));
+
+INSERT INTO Cliente (Email_Usuario, Data_Criacao_Conta ) VALUES ('pessoaP@gmail.com', TO_DATE('1979-10-19', 'YYYY-MM-DD'));
+
 --Inserindo Assistencia 
 
 INSERT INTO Assistencia (Cnpj, Data_Inicio, Descricao, Status, Equipamento)
@@ -313,4 +347,4 @@ INSERT INTO Protocolo_de_Atendimento (Codigo_Protocolo, Cnpj, Desc_Pro, Acoes_To
 VALUES ('P009', '89012345678901', 9, 'Substituição de teclas quebradas', TO_DATE('2023-07-28', 'YYYY-MM-DD'), TO_DATE('2023-07-29', 'YYYY-MM-DD'));
 
 INSERT INTO Protocolo_de_Atendimento (Codigo_Protocolo, Cnpj, Desc_Pro, Acoes_Tomadas, Data_Inicio, Data_Conclusao)
-VALUES ('P010', '90123456789012', 10, 'Correção do problema de clique duplo, sensor trocado', TO_DATE('2023-07-29', 'YYYY-MM-DD'), TO_DATE('2023-07-30', 'YYYY-MM-DD'));
+VALUES ('P010', '90123456789012', 10, 'Botão trocado', TO_DATE('2023-07-29', 'YYYY-MM-DD'), TO_DATE('2023-07-30', 'YYYY-MM-DD'));
