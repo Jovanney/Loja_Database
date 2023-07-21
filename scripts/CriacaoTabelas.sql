@@ -68,15 +68,15 @@ CREATE TABLE Pedido
 
 -- Criando Tabela Produto
 CREATE TABLE Produto
-    (id_produto number(20),
-	quantidade number(20),
+    (id_produto number(10),
+	quantidade number(3),
 	nome varchar2(100),
 	preco number(7,2),
 	data_estoque timestamp,
 	caracteristicas varchar2(200),
 	marca varchar2(20),
 	categoria varchar2(20),
-	pedido number (20) NOT NULL,
+	pedido number (10) NOT NULL,
 	CONSTRAINT produto_pkey PRIMARY KEY (id_produto),
 	CONSTRAINT produto_fkey FOREIGN KEY (pedido) REFERENCES Pedido (id_pedido));
 
