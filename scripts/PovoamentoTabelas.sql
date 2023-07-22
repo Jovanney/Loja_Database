@@ -318,8 +318,17 @@ INSERT INTO Cargos(cargo, salario) VALUES ('Analista', 'R$4.000,00');
 
 --Inserindo Funcionario
 
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaQ@gmail.com', 'Supervisor', TO_DATE('2019-05-03', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaR@gmail.com', 'Supervisor', TO_DATE('2017-01-24', 'YYYY-MM-DD'), NULL);
+
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('joao@email.com', 'Vendedor', TO_DATE('2003-12-08', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+VALUES ('carlos@email.com', 'Supervisor', TO_DATE('2013-04-19', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('joao@email.com', 'Vendedor', TO_DATE('2020-12-08', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('maria@email.com', 'Analista', TO_DATE('2023-01-14', 'YYYY-MM-DD'), 'carlos@email.com');
@@ -329,9 +338,6 @@ VALUES ('pedro@email.com', 'Analista', TO_DATE('2010-08-19', 'YYYY-MM-DD'), 'car
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('ana@email.com', 'Analista', TO_DATE('2012-05-19', 'YYYY-MM-DD'), 'carlos@email.com');
-
-INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('carlos@email.com', 'Supervisor', TO_DATE('2013-04-19', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('lucas@email.com', 'Analista', TO_DATE('2001-08-19', 'YYYY-MM-DD'), 'carlos@email.com');
@@ -347,12 +353,6 @@ VALUES ('julia@email.com', 'Pesquisador de Mercado', TO_DATE('2015-03-08', 'YYYY
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('rafael@email.com', 'Programador', TO_DATE('2019-04-19', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
-
-INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('pessoaQ@gmail.com', 'Supervisor', TO_DATE('2019-05-03', 'YYYY-MM-DD'), NULL);
-
-INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
-VALUES ('pessoaR@gmail.com', 'Supervisor', TO_DATE('2017-01-24', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
 VALUES ('pessoaS@gmail.com', 'Digital Influencer', TO_DATE('2022-07-16', 'YYYY-MM-DD'), NULL);
@@ -370,7 +370,7 @@ INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_sup
 VALUES ('pessoaW@gmail.com', 'Programador', TO_DATE('2019-04-08', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
 
 INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
-VALUES ('pessoaX@gmail.com', 'Estágiario', TO_DATE('2022-09-30', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+VALUES ('pessoaX@gmail.com', 'Estagiário', TO_DATE('2022-09-30', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('pessoaY@gmail.com', 'Filho do dono', TO_DATE('2023-03-08', 'YYYY-MM-DD'), NULL);
@@ -392,6 +392,121 @@ VALUES ('pessoaAE@gmail.com', 'Suporte', TO_DATE('2023-07-19', 'YYYY-MM-DD'), 'p
 
 INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
 VALUES ('pessoaAF@gmail.com', 'Estagiário', TO_DATE('2022-08-13', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+--Inserindo em Transportadora
+
+INSERT INTO Transportadora (cnpj) VALUES (90000000000009);
+INSERT INTO Transportadora (cnpj) VALUES (90101010101019);
+INSERT INTO Transportadora (cnpj) VALUES (90202020202029);
+INSERT INTO Transportadora (cnpj) VALUES (90303030303039);
+INSERT INTO Transportadora (cnpj) VALUES (90404040404049);
+INSERT INTO Transportadora (cnpj) VALUES (90505050505059);
+INSERT INTO Transportadora (cnpj) VALUES (90606060606069);
+INSERT INTO Transportadora (cnpj) VALUES (90707070707079);
+INSERT INTO Transportadora (cnpj) VALUES (90808080808089);
+INSERT INTO Transportadora (cnpj) VALUES (90909090909099);
+INSERT INTO Transportadora (cnpj) VALUES (91010101010109);
+INSERT INTO Transportadora (cnpj) VALUES (91111111111119);
+INSERT INTO Transportadora (cnpj) VALUES (91212121212129);
+INSERT INTO Transportadora (cnpj) VALUES (91313131313139);
+INSERT INTO Transportadora (cnpj) VALUES (91414141414149);
+INSERT INTO Transportadora (cnpj) VALUES (91515151515159);
+INSERT INTO Transportadora (cnpj) VALUES (91616161616169);
+INSERT INTO Transportadora (cnpj) VALUES (91717171717179);
+INSERT INTO Transportadora (cnpj) VALUES (91818181818189);
+INSERT INTO Transportadora (cnpj) VALUES (91919191919199);
+INSERT INTO Transportadora (cnpj) VALUES (92020202020209);
+INSERT INTO Transportadora (cnpj) VALUES (92121212121219);
+INSERT INTO Transportadora (cnpj) VALUES (92222222222229);
+INSERT INTO Transportadora (cnpj) VALUES (92323232323239);
+INSERT INTO Transportadora (cnpj) VALUES (92424242424249);
+INSERT INTO Transportadora (cnpj) VALUES (92525252525259);
+INSERT INTO Transportadora (cnpj) VALUES (92626262626269);
+INSERT INTO Transportadora (cnpj) VALUES (92727272727279);
+INSERT INTO Transportadora (cnpj) VALUES (92828282828289);
+INSERT INTO Transportadora (cnpj) VALUES (92929292929299);
+
+
+--Inserindo em Pedido
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
+    VALUES (9000000009, TO_DATE('2022-12-10', 'YYYY-MM-DD'), '1x Mouse HyperX Pulsefire; 1x Headset SteelSeries Arctis 7+', 682.98, 'Cancelado', 'Rua O Pintinho Pio, 999', 45.72, 'pessoaP@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
+    VALUES (9010101019, TO_DATE('2022-12-15', 'YYYY-MM-DD'), '2x Monitor Acer 19,5 polegadas', 1099.98, 'Entregue', 'Armazem 1 - São Paulo', 'Recife', 'Rua A galinha Có, 111', 
+    TO_DATE('2023-01-10', 'YYYY-MM-DD'), TO_DATE('2022-12-27', 'YYYY-MM-DD'), 29.43, 'pessoaA@gmail.com', 91010101010109);
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
+    VALUES (9020202029, TO_DATE('2022-12-28', 'YYYY-MM-DD'), '4x HD 1TB Seagate', 980.00, 'Entregue', 'Armazem 2 - São Paulo', 'Goiana', 'Rua O Galo Corococó, 333', 
+    TO_DATE('2023-01-12', 'YYYY-MM-DD'), TO_DATE('2022-12-29', 'YYYY-MM-DD'), 19.00, 'pessoaH@gmail.com', 91818181818189);
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
+    VALUES (9131313139, TO_DATE('2023-01-01', 'YYYY-MM-DD'), '2x HD 1TB Seagate', 300.00, 'Entregue', 'Armazem 1 - São Paulo', 'Campinas', 'Rua O Gato Miau, 222', 
+    TO_DATE('2023-01-31', 'YYYY-MM-DD'), TO_DATE('2023-01-13', 'YYYY-MM-DD'), 36.71, 'pessoaE@gmail.com', 90101010101019);
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
+    VALUES (9151515159, TO_DATE('2023-01-15', 'YYYY-MM-DD'), '1x Detroit: Become Human Digital Version, 1x Beyond: Two Souls Digital Version', 
+    199.00, 'Entregue', TO_DATE('2023-01-15', 'YYYY-MM-DD'), 'pessoaA@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
+    VALUES (9202020209, TO_DATE('2023-02-03', 'YYYY-MM-DD'), '1x Diablo IV Digital Version', 199.00, 'Entregue', TO_DATE('2023-02-03', 'YYYY-MM-DD'), 'pessoaB@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
+    VALUES (9222222229, TO_DATE('2023-02-03', 'YYYY-MM-DD'), '1x Valorant VP 13000', 299.00, 'Entregue', TO_DATE('2023-02-03', 'YYYY-MM-DD'), 'pessoaC@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
+    VALUES (9242424249, TO_DATE('2023-04-10', 'YYYY-MM-DD'), '1x Teclado Dell', 89.99, 'Cancelado', 'Rua O Gato Miau, 555', 9.99, 'pessoaE@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
+    VALUES (9424242429, TO_DATE('2023-07-19', 'YYYY-MM-DD'), '1x Mouse Dell', 89.99, 'Aguardando Pagamento', 'Rua O Gato Miau, 555', 9.99, 'pessoaE@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
+    VALUES (9434343439, TO_DATE('2023-07-20', 'YYYY-MM-DD'), '2x HD 2TB Seagate', 673.98, 'Aguardando Pagamento', 'Rua O Peru Gulu Gulu, 555', 29.84, 'pessoaM@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
+    VALUES (9393939399, TO_DATE('2023-07-16', 'YYYY-MM-DD'), '2x HD 2TB Seagate', 689.76, 'Em Separação', 'Rua O Pintinho Piu, 999', 29.84, 'pessoaP@gmail.com');
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_saida, frete, cliente, transportadora) 
+    VALUES (9323232329, TO_DATE('2023-07-10', 'YYYY-MM-DD'), '1x Monitor Acer Nitro', 2099.99, 'Em Transporte','Armazem 2 - São Paulo', 'Jaboatão dos Guararapes', 'Rua O Cachorro Au Au, 008', 
+    TO_DATE('2023-07-15', 'YYYY-MM-DD'), 26.73, 'pessoaC@gmail.com', 90101010101019);
+INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_saida, frete, cliente, transportadora) 
+    VALUES (9353535359, TO_DATE('2023-07-11', 'YYYY-MM-DD'), '1x Mouse Razer DeathAdder', 349.85, 'Em Transporte','Armazem 2 - São Paulo', 'Aracaju', 'Rua O Capote Totac, 478', 
+    TO_DATE('2023-07-17', 'YYYY-MM-DD'), 28.34, 'pessoaK@gmail.com', 92525252525259);
+
+-- Inserindo Pagamento
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((8401335639), TO_DATE('2023-07-21', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9000000009));
+     
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((9290883750), TO_DATE('2023-06-15', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9010101019));
+    
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((2807999857), TO_DATE('2023-05-28', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9131313139));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((1089485343), TO_DATE('2023-07-03', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9151515159));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((7747535127), TO_DATE('2023-05-05', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (9202020209));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((3441727099), TO_DATE('2023-06-06', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9222222229));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((8275845891), TO_DATE('2023-07-07', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9242424249));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((9286776558), TO_DATE('2023-07-01', 'YYYY-MM-DD'),('Cancelado'), ('Crédito'), (9242424249));
+
+INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
+VALUES ((1632102375), TO_DATE('2023-06-30', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9424242429));
+        
+--Inserindo em Produto
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0101010101, 1, 'Mouse HyperX Pulsefire', 109.99, TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'HyperX', 'Mouse', 9000000009);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0202020202, 1, 'Headset SteelSeries Arctis 7+', 572.99, TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HeadSet com fio; Branco', 'Steelseries', 'Headset', 9000000009);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0303030303, 2, 'Monitor Acer 19,5 polegadas', 549.99, TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'Monitor LED; Preto', 'Acer', 'Monitor', 9010101019);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0404040404, 4, 'HD 1TB Seagate', 245.00, TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HD interno; Preto', 'Seagate', 'HD', 9020202029);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0505050505, 2, 'HD 1TB Seagate', 150.00, TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HD interno; Preto', 'Seagate', 'HD', 9131313139);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0606060606, 1, 'Detroit: Become Human Digital Version', 150.00, TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Quantic Dream', 'Jogo Digital', 9151515159);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0707070707, 1, 'Beyond: Two Souls Digital Version', 49.00, TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Quantic Dream', 'Jogo Digital', 9151515159);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0808080808, 1, 'Diablo IV Digital Version', 199.00, TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Blizzard', 'Jogo Digital', 9202020209);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0909090909, 1, 'Valorant VP 13000', 299.00, TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Riot Games', 'Jogo Digital', 9222222229);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1010101010, 1, 'Teclado Dell', 89.99, TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Teclado com fio; Preto', 'Dell', 'Teclado', 9242424249);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1111111111, 1, 'Monitor Acer Nitro', 2099.99, TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'Monitor LED 27,5 Polegadas; Preto', 'Acer', 'Monitor', 9323232329);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1212121212, 1, 'Mouse Razer DeathAdder', 349.85, TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'Razer', 'Mouse', 9353535359);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1313131313, 2, 'HD 2TB Seagate', 344.88, TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'HD interno', 'Seagate', 'HD', 9393939399);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1414141414, 1, 'Mouse Dell', 89.99, TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'Dell', 'Mouse', 9424242429);
+INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1515151515, 2, 'HD 2TB Seagate', 336.99, TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'HD interno', 'Seagate', 'HD', 9434343439);
+
 
 --Inserindo Ordem_de_servico
 
@@ -425,70 +540,6 @@ VALUES ('IIII9999', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Disco SSD', TO
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
 VALUES ('JJJJ0000', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
 
--- Inserindo Aciona
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaA@gmail.com', 'pessoaB@gmail.com','12345678901234');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaC@gmail.com', 'pessoaD@gmail.com','98765432109876');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaE@gmail.com', 'pessoaF@gmail.com','65432109876543');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaG@gmail.com', 'pessoaH@gmail.com','54321098765432');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaI@gmail.com', 'pessoaJ@gmail.com','01234567890123');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaK@gmail.com', 'pessoaL@gmail.com','90123456789012');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaM@gmail.com', 'pessoaN@gmail.com','34567890123456');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaO@gmail.com', 'pessoaP@gmail.com','78901234567890');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaQ@gmail.com', 'pessoaR@gmail.com','23456789012345');
-
-INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
-VALUES ('pessoaS@gmail.com', 'pessoaT@gmail.com','45678901234567');
-
--- Inserindo Serviço a ser Realizado
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaB@gmail.com', 'AAAA1111', 'REL001', 'SERV001');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaD@gmail.com', 'BBBB2222', 'REL002', 'SERV002');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaF@gmail.com', 'CCCC3333', 'REL003', 'SERV003');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaH@gmail.com', 'DDDD4444', 'REL004', 'SERV004');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaJ@gmail.com', 'EEEE5555', 'REL005', 'SERV005');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaL@gmail.com', 'FFFF6666', 'REL006', 'SERV006');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaN@gmail.com', 'GGGG7777', 'REL007', 'SERV007');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaP@gmail.com', 'HHHH8888', 'REL008', 'SERV008');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaR@gmail.com', 'IIII9999', 'REL009', 'SERV009');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaT@gmail.com', 'JJJJ10101010', 'REL010', 'SERV010');
-
 --Inserindo Assistencia 
 
 INSERT INTO Assistencia (cnpj, data_inicio, descricao, status, equipamento)
@@ -520,6 +571,38 @@ VALUES ('89012345678901', TO_DATE('2023-07-28', 'YYYY-MM-DD'), 'Teclas sem funci
 
 INSERT INTO Assistencia (cnpj, data_inicio, descricao, status, equipamento)
 VALUES ('90123456789012', TO_DATE('2023-07-29', 'YYYY-MM-DD'), 'Clique duplo', 'Concluído', 'Mouse');
+
+-- Inserindo Aciona
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaA@gmail.com', 'gabriel@email.com','34567890123456');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaC@gmail.com', 'lucas@email.com','45678901234567');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaE@gmail.com', 'ana@email.com','56789012345678');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaG@gmail.com', 'pedro@email.com','12345678901234');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaI@gmail.com', 'pessoaX@gmail.com','23456789012345');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaK@gmail.com', 'pessoaAC@gmail.com','12344672301454');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaM@gmail.com', 'pessoaAD@gmail.com','67890123456789');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaO@gmail.com', 'ana@email.com','78901234567890');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaA@gmail.com', 'pessoaAD@gmail.com','89012345678901');
+
+INSERT INTO Aciona(cliente_email, funcionario_email, assistencia_cnpj) 
+VALUES ('pessoaB@gmail.com', 'pessoaAC@gmail.com','90123456789012');
 
 --Inserindo Tipo Assistencia
 
@@ -658,136 +741,36 @@ VALUES ('SERV009', 'marina@email.com', 'P009', 'Pendente', TO_DATE('2023-07-20',
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
 VALUES ('SERV010', 'carlos@email.com', 'P010', 'Concluído', TO_DATE('2023-07-14', 'YYYY-MM-DD'), TO_DATE('2023-07-15', 'YYYY-MM-DD'));
 
+-- Inserindo Serviço a ser Realizado
 
---Inserindo em Transportadora
-INSERT INTO Transportadora (cnpj) VALUES (90000000000009);
-INSERT INTO Transportadora (cnpj) VALUES (90101010101019);
-INSERT INTO Transportadora (cnpj) VALUES (90202020202029);
-INSERT INTO Transportadora (cnpj) VALUES (90303030303039);
-INSERT INTO Transportadora (cnpj) VALUES (90404040404049);
-INSERT INTO Transportadora (cnpj) VALUES (90505050505059);
-INSERT INTO Transportadora (cnpj) VALUES (90606060606069);
-INSERT INTO Transportadora (cnpj) VALUES (90707070707079);
-INSERT INTO Transportadora (cnpj) VALUES (90808080808089);
-INSERT INTO Transportadora (cnpj) VALUES (90909090909099);
-INSERT INTO Transportadora (cnpj) VALUES (91010101010109);
-INSERT INTO Transportadora (cnpj) VALUES (91111111111119);
-INSERT INTO Transportadora (cnpj) VALUES (91212121212129);
-INSERT INTO Transportadora (cnpj) VALUES (91313131313139);
-INSERT INTO Transportadora (cnpj) VALUES (91414141414149);
-INSERT INTO Transportadora (cnpj) VALUES (91515151515159);
-INSERT INTO Transportadora (cnpj) VALUES (91616161616169);
-INSERT INTO Transportadora (cnpj) VALUES (91717171717179);
-INSERT INTO Transportadora (cnpj) VALUES (91818181818189);
-INSERT INTO Transportadora (cnpj) VALUES (91919191919199);
-INSERT INTO Transportadora (cnpj) VALUES (92020202020209);
-INSERT INTO Transportadora (cnpj) VALUES (92121212121219);
-INSERT INTO Transportadora (cnpj) VALUES (92222222222229);
-INSERT INTO Transportadora (cnpj) VALUES (92323232323239);
-INSERT INTO Transportadora (cnpj) VALUES (92424242424249);
-INSERT INTO Transportadora (cnpj) VALUES (92525252525259);
-INSERT INTO Transportadora (cnpj) VALUES (92626262626269);
-INSERT INTO Transportadora (cnpj) VALUES (92727272727279);
-INSERT INTO Transportadora (cnpj) VALUES (92828282828289);
-INSERT INTO Transportadora (cnpj) VALUES (92929292929299);
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaB@gmail.com', 'AAAA1111', 'REL001', 'SERV001');
 
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaD@gmail.com', 'BBBB2222', 'REL002', 'SERV002');
 
---Inserindo em Pedido
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
-    VALUES (9000000009, TO_DATE('2022-12-10', 'YYYY-MM-DD'), '1x Mouse HyperX Pulsefire; 1x Headset SteelSeries Arctis 7+', 682.98, 'Cancelado', 'Rua O Pintinho Pio, 999', 45.72, 'pessoaP@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
-    VALUES (9010101019, TO_DATE('2022-12-15', 'YYYY-MM-DD'), '2x Monitor Acer 19,5 polegadas', 1099.98, 'Entregue', 'Armazem 1 - São Paulo', 'Recife', 'Rua A galinha Có, 111', 
-    TO_DATE('2023-01-10', 'YYYY-MM-DD'), TO_DATE('2022-12-27', 'YYYY-MM-DD'), 29.43, 'pessoaA@gmail.com', 91010101010109);
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
-    VALUES (9020202029, TO_DATE('2022-12-28', 'YYYY-MM-DD'), '4x HD 1TB Seagate', 980.00, 'Entregue', 'Armazem 2 - São Paulo', 'Goiana', 'Rua O Galo Corococó, 333', 
-    TO_DATE('2023-01-12', 'YYYY-MM-DD'), TO_DATE('2022-12-29', 'YYYY-MM-DD'), 19.00, 'pessoaH@gmail.com', 91818181818189);
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_entrega, data_saida, frete, cliente, transportadora) 
-    VALUES (9131313139, TO_DATE('2023-01-01', 'YYYY-MM-DD'), '2x HD 1TB Seagate', 300.00, 'Entregue', 'Armazem 1 - São Paulo', 'Campinas', 'Rua O Gato Miau, 222', 
-    TO_DATE('2023-01-31', 'YYYY-MM-DD'), TO_DATE('2023-01-13', 'YYYY-MM-DD'), 36.71, 'pessoaE@gmail.com', 90101010101019);
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
-    VALUES (9151515159, TO_DATE('2023-01-15', 'YYYY-MM-DD'), '1x Detroit: Become Human Digital Version, 1x Beyond: Two Souls Digital Version', 
-    199.00, 'Entregue', TO_DATE('2023-01-15', 'YYYY-MM-DD'), 'pessoaA@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
-    VALUES (9202020209, TO_DATE('2023-02-03', 'YYYY-MM-DD'), '1x Diablo IV Digital Version', 199.00, 'Entregue', TO_DATE('2023-02-03', 'YYYY-MM-DD'), 'pessoaB@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, data_entrega, cliente) 
-    VALUES (9222222229, TO_DATE('2023-02-03', 'YYYY-MM-DD'), '1x Valorant VP 13000', 299.00, 'Entregue', TO_DATE('2023-02-03', 'YYYY-MM-DD'), 'pessoaC@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
-    VALUES (9242424249, TO_DATE('2023-04-10', 'YYYY-MM-DD'), '1x Teclado Dell', 89.99, 'Cancelado', 'Rua O Gato Miau, 555', 9.99, 'pessoaE@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
-    VALUES (9424242429, TO_DATE('2023-07-19', 'YYYY-MM-DD'), '1x Mouse Dell', 89.99, 'Aguardando Pagamento', 'Rua O Gato Miau, 555', 9.99, 'pessoaE@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
-    VALUES (9434343439, TO_DATE('2023-07-20', 'YYYY-MM-DD'), '2x HD 2TB Seagate', 673.98, 'Aguardando Pagamento', 'Rua O Peru Gulu Gulu, 555', 29.84, 'pessoaM@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, destino, frete, cliente) 
-    VALUES (9393939399, TO_DATE('2023-07-16', 'YYYY-MM-DD'), '2x HD 2TB Seagate', 689.76, 'Em Separação', 'Rua O Pintinho Piu, 999', 29.84, 'pessoaP@gmail.com');
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_saida, frete, cliente, transportadora) 
-    VALUES (9323232329, TO_DATE('2023-07-10', 'YYYY-MM-DD'), '1x Monitor Acer Nitro', 2099.99, 'Em Transporte','Armazem 2 - São Paulo', 'Jaboatão dos Guararapes', 'Rua O Cachorro Au Au, 008', 
-    TO_DATE('2023-07-15', 'YYYY-MM-DD'), 26.73, 'pessoaC@gmail.com', 90101010101019);
-INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_saida, local_atual, destino, data_saida, frete, cliente, transportadora) 
-    VALUES (9353535359, TO_DATE('2023-07-11', 'YYYY-MM-DD'), '1x Mouse Razer DeathAdder', 349.85, 'Em Transporte','Armazem 2 - São Paulo', 'Aracaju', 'Rua O Capote Totac, 478', 
-    TO_DATE('2023-07-17', 'YYYY-MM-DD'), 28.34, 'pessoaK@gmail.com', 92525252525259);
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaF@gmail.com', 'CCCC3333', 'REL003', 'SERV003');
 
--- Inserindo Pagamento
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaH@gmail.com', 'DDDD4444', 'REL004', 'SERV004');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8401335639), TO_DATE('2023-07-21', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9000000009));
-     
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((9290883750), TO_DATE('2023-06-15', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9010101019));
-    
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8725135577), TO_DATE('2023-07-12', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (99020202029));
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaJ@gmail.com', 'EEEE5555', 'REL005', 'SERV005');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((2807999857), TO_DATE('2023-05-28', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9131313139));
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaL@gmail.com', 'FFFF6666', 'REL006', 'SERV006');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((1089485343), TO_DATE('2023-07-03', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9151515159));
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaN@gmail.com', 'GGGG7777', 'REL007', 'SERV007');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((7747535127), TO_DATE('2023-05-05', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (9202020209));
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaP@gmail.com', 'HHHH8888', 'REL008', 'SERV008');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((3441727099), TO_DATE('2023-06-06', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9222222229));
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaR@gmail.com', 'IIII9999', 'REL009', 'SERV009');
 
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8275845891), TO_DATE('2023-07-07', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9242424249));
-
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((9286776558), TO_DATE('2023-07-01', 'YYYY-MM-DD'),('Cancelado'), ('Crédito'), (9242424249));
-
-INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((1632102375), TO_DATE('2023-06-30', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9424242429));
-        
---Inserindo em Produto
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0101010101, 1, 'Mouse HyperX Pulsefire', 109.99,
-	TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'HyperX', 'Mouse', 9000000009);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0202020202, 1, 'Headset SteelSeries Arctis 7+', 572.99,
-	TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HeadSet com fio; Branco', 'Steelseries', 'Headset', 9000000009);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0303030303, 2, 'Monitor Acer 19,5 polegadas', 549.99,
-	TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'Monitor LED; Preto', 'Acer', 'Monitor', 9010101019);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0404040404, 4, 'HD 1TB Seagate', 245.00,
-	TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HD interno; Preto', 'Seagate', 'HD', 9020202029);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0505050505, 2, 'HD 1TB Seagate', 150.00,
-	TO_DATE('2022-10-31', 'YYYY-MM-DD'), 'HD interno; Preto', 'Seagate', 'HD', 9131313139);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0606060606, 1, 'Detroit: Become Human Digital Version', 150.00,
-	TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Quantic Dream', 'Jogo Digital', 9151515159);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0707070707, 1, 'Beyond: Two Souls Digital Version', 49.00,
-	TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Quantic Dream', 'Jogo Digital', 9151515159);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0808080808, 1, 'Diablo IV Digital Version', 199.00,
-	TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Blizzard', 'Jogo Digital', 9202020209);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0909090909, 1, 'Valorant VP 13000', 299.00,
-	TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Chave de ativação', 'Riot Games', 'Jogo Digital', 9222222229);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1010101010, 1, 'Teclado Dell', 89.99,
-	TO_DATE('2022-11-15', 'YYYY-MM-DD'), 'Teclado com fio; Preto', 'Dell', 'Teclado', 9242424249);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1111111111, 1, 'Monitor Acer Nitro', 2099.99,
-	TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'Monitor LED 27,5 Polegadas; Preto', 'Acer', 'Monitor', 9323232329);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1212121212, 1, 'Mouse Razer DeathAdder', 349.85,
-	TO_DATE('2022-11-30', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'Razer', 'Mouse', 9353535359);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1313131313, 2, 'HD 2TB Seagate', 344.88,
-	TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'HD interno', 'Seagate', 'HD', 9393939399);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1414141414, 1, 'Mouse Dell', 89.99,
-	TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'Mouse com fio; Preto', 'Dell', 'Mouse', 9424242429);
-INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (1515151515, 2, 'HD 2TB Seagate', 336.99,
-    TO_DATE('2023-01-31', 'YYYY-MM-DD'), 'HD interno', 'Seagate', 'HD', 9434343439);
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pessoaT@gmail.com', 'JJJJ10101010', 'REL010', 'SERV010');
 
 
