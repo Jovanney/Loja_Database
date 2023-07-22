@@ -283,37 +283,139 @@ INSERT INTO Cliente (email_usuario, data_criacao_conta ) VALUES ('pessoaO@gmail.
 
 INSERT INTO Cliente (email_usuario, data_criacao_conta ) VALUES ('pessoaP@gmail.com', TO_DATE('1979-10-19', 'YYYY-MM-DD'));
 
+-- Inserindo Cargos
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Suporte', 'R$2.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Gerente', 'R$20.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Supervisor', 'R$10.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Estagiário', 'R$100,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Digital Influencer', 'R$50.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Filho do dono', 'R$15.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Programador', 'R$5.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Vendedor', 'R$1.500,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Caixa', 'R$1.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Pesquisador de Mercado', 'R$3.000,00');
+
+INSERT INTO Cargos(cargo, salario) VALUES ('Analista', 'R$4.000,00');
+
+
 --Inserindo Funcionario
-INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('joao@email.com', 'Vendedor', '2020-05-15 09:00:00', NULL);
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('maria@email.com', 'Analista Financeiro', '2019-10-22 14:30:00', NULL);
+VALUES ('joao@email.com', 'Vendedor', '2020-05-15 09:00:00', 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('pedro@email.com', 'Analista de Estoque', '2021-03-10 11:45:00', NULL);
+VALUES ('maria@email.com', 'Analista', '2019-10-22 14:30:00', 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('ana@email.com', 'Analista de Dados', '2018-07-05 08:15:00', NULL);
+VALUES ('pedro@email.com', 'Analista', '2021-03-10 11:45:00', 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('carlos@email.com', 'Gerente de Projetos', '2017-12-18 10:20:00', NULL);
+VALUES ('ana@email.com', 'Analista', '2018-07-05 08:15:00', 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('lucas@email.com', 'Analista de Sistemas', '2022-01-03 13:10:00', NULL);
+VALUES ('carlos@email.com', 'Supervisor', '2017-12-18 10:20:00', NULL);
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('marina@email.com', 'Atendente', '2016-09-27 07:55:00', NULL);
+VALUES ('lucas@email.com', 'Analista', '2022-01-03 13:10:00', 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('gabriel@email.com', 'Analista de Marketing', '2020-08-12 15:25:00', NULL);
+VALUES ('marina@email.com', 'Vendedor', '2016-09-27 07:55:00', 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('julia@email.com', 'Pesquisador de Mercado', '2023-02-08 12:30:00', NULL);
+VALUES ('gabriel@email.com', 'Analista', '2020-08-12 15:25:00', 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('rafael@email.com', 'Desenvolvedor', '2019-04-19 16:40:00', NULL);
+VALUES ('julia@email.com', 'Pesquisador de Mercado', '2023-02-08 12:30:00', 'carlos@email.com');
 
+INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('rafael@email.com', 'Programador', '2019-04-19 16:40:00', 'pessoaR@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaQ@gmail.com', 'Supervisor', TO_DATE('2019-05-03', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaR@gmail.com', 'Supervisor', TO_DATE('2017-01-24', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaS@gmail.com', 'Digital Influencer', TO_DATE('2022-07-16', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaT@gmail.com', 'Caixa', TO_DATE('2018-08-13', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaU@gmail.com', 'Vendedor', TO_DATE('2019-07-03', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaV@gmail.com', 'Programador', TO_DATE('2017-06-07', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaW@gmail.com', 'Programador', TO_DATE('2019-04-08', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaX@gmail.com', 'Estágiario', TO_DATE('2022-09-30', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaY@gmail.com', 'Filho do dono', TO_DATE('2023-03-08', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaZ@gmail.com', 'Gerente', TO_DATE('2017-09-25', 'YYYY-MM-DD'), NULL);
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaAB@gmail.com', 'Caixa', TO_DATE('2018-08-15', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaAC@gmail.com', 'Suporte', TO_DATE('2017-07-13', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaAD@gmail.com', 'Vendedor', TO_DATE('2022-11-21', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
+VALUES ('pessoaAE@gmail.com', 'Suporte', TO_DATE('2023-07-19', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
+
+INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv) 
+VALUES ('pessoaAF@gmail.com', 'Estagiário', TO_DATE('2022-08-13', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
+
+--Inserindo Ordem_de_servico
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('AAAA1111', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Teclado', TO_DATE('2021-02-15', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('BBBB2222', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('CCCC3333', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Carregador', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('DDDD4444', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Notebook', TO_DATE('2022-01-05', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('EEEE5555', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Processador', TO_DATE('2019-12-23', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('FFFF6666', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Fone de ouvido', TO_DATE('2022-02-15', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('GGGG7777', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Mouse', TO_DATE('2023-11-19', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('HHHH8888', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Memória RAM', TO_DATE('2022-06-25', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('IIII9999', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Disco SSD', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
+
+INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
+VALUES ('JJJJ0000', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
 
 
 --Inserindo Assistencia 
