@@ -5,7 +5,7 @@ Create table Endereco (
     bairro VARCHAR2(50),
     rua VARCHAR2(50),
     
-    CONSTRAINT endereço_pk PRIMARY KEY (cep));
+    CONSTRAINT endereco_pk PRIMARY KEY (cep));
 
 --Criando tabela Usuario
 
@@ -36,7 +36,7 @@ CREATE TABLE Cargo_func(
     cargo  VARCHAR(50),
     salario VARCHAR(50),
 
-    CONSTRAINT cargo_pk PRIMARY KEY (cargo));
+    CONSTRAINT cargo_func__pk PRIMARY KEY (cargo));
 
 --Criando tabela Cliente
 
@@ -46,8 +46,7 @@ CREATE TABLE Cliente(
     data_criacao_Conta DATE NOT NULL,
 
     CONSTRAINT cliente_pk PRIMARY KEY (email_usuario),
-    CONSTRAINT cargo_fk FOREIGN KEY (cargo) REFERENCES Cargo_func (cargo));
-    CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email);
+    CONSTRAINT email_usuario_C_fk FOREIGN KEY (email_usuario) REFERENCES usuario (email));
 
 --Criando tabela Cargos
 
@@ -55,7 +54,7 @@ CREATE TABLE Cargos(
     cargo VARCHAR2(50) NOT NULL,
     salario VARCHAR2(50) NOT NULL,
 
-    CONSTRAINT cargo_pk PRIMARY KEY (cargo));
+    CONSTRAINT cargos_pk PRIMARY KEY (cargo));
 
 
 --Criando tabela Funcionario
@@ -72,16 +71,6 @@ CREATE TABLE Funcionario(
     CONSTRAINT cargo_fk FOREIGN KEY (cargo_func) REFERENCES Cargos(cargo));
 
 
---Criando tabela Aciona
-
-CREATE TABLE Aciona(
-	cliente_email VARCHAR2(50),
-  	funcionario_email VARCHAR2(50),
-  	assistencia_cnpj VARCHAR2(14),
-  	CONSTRAINT cliente_Aciona FOREIGN KEY (cliente_email) REFERENCES Usuario(email),
-  	CONSTRAINT funcionario_Aciona FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
-  	CONSTRAINT assitencia_Aciona FOREIGN KEY (assistencia_cnpj) REFERENCES Assistencia(cnpj)
-);
 
 
 --Criando tabela Ordem_de_servico
@@ -93,21 +82,9 @@ CREATE TABLE Ordem_de_servico(
     produto VARCHAR2(50) NOT NULL,
     data_de_emissao timestamp NOT NULL,
 
-    CONSTRAINT protocolo_pk PRIMARY KEY (protocolo),
+    CONSTRAINT ordem_de_servico_pk PRIMARY KEY (protocolo),
     CONSTRAINT email_func_fk FOREIGN KEY (email_func) REFERENCES Funcionario(email_funcionario));
 
---Criando tabela Serviço a ser realizado
-CREATE TABLE Servico_a_ser_realizado(
-	funcionario_email VARCHAR2(50),
-  	ordServico_protocolo VARCHAR2(50),
-  	relatorio_codigo VARCHAR2(50),
-  	servico_codigo VARCHAR2(50), 
-
-  	CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
-  	CONSTRAINT ordServico_Aprova FOREIGN KEY (ordServico_protocolo) REFERENCES Ordem_de_servico(protocolo),
-  	CONSTRAINT relatorio_Aprova FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio(codigo_relatorio),
-  	CONSTRAINT servico_Aprova FOREIGN KEY (servico_codigo) REFERENCES Servico(codigo_servico)
-);
 
 
 -- Criando Tabela Transportadora
@@ -160,8 +137,9 @@ CREATE TABLE Produto(
 	marca varchar2(20),
 	categoria varchar2(20),
 	pedido number (10) NOT NULL,
-	CONSTRAINT produto_pkey PRIMARY KEY (id_produto),
-	CONSTRAINT produto_fkey FOREIGN KEY (pedido) REFERENCES Pedido (id_pedido));
+	
+    CONSTRAINT produto_pkey PRIMARY KEY (id_produto),
+	CONSTRAINT produto_fkey FOREIGN KEY (pedido) REFERENCES Pedido(id_pedido));
 
 --Criando tabela Assistencia
 
@@ -174,6 +152,17 @@ CREATE TABLE Assistencia(
 
     CONSTRAINT assistencia_pkey PRIMARY KEY (cnpj));
 
+--Criando tabela Aciona
+
+CREATE TABLE Aciona(
+	cliente_email VARCHAR2(50),
+  	funcionario_email VARCHAR2(50),
+  	assistencia_cnpj VARCHAR2(14),
+  	CONSTRAINT cliente_aciona FOREIGN KEY (cliente_email) REFERENCES Usuario(email),
+  	CONSTRAINT funcionario_aciona FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+  	CONSTRAINT assitencia_aciona FOREIGN KEY (assistencia_cnpj) REFERENCES Assistencia(cnpj)
+);
+
 --Criando tabela Tipo da Assistencia
 
 CREATE TABLE TipoAssistencia(
@@ -182,6 +171,53 @@ CREATE TABLE TipoAssistencia(
     
     CONSTRAINT tipoassistencia_pkey PRIMARY KEY (tipo_assistencia, cnpj_assistencia),
     CONSTRAINT tipoassistencia_fkey FOREIGN KEY (cnpj_Assistencia) REFERENCES Assistencia(cnpj));
+
+CREATE TABLE Relatorio(
+    codigo_relatorio VARCHAR2(50),
+    descricao VARCHAR(50),
+
+    CONSTRAINT relatorio_pk PRIMARY KEY (codigo_relatorio));
+
+CREATE TABLE Servico(
+    codigo_servico VARCHAR2(50),
+    status VARCHAR(20),
+    data_inicio date,
+    data_conclusao date,
+
+    CONSTRAINT servico_pk PRIMARY KEY (codigo_servico));
+
+
+--Criando tabela Serviço a ser realizado
+
+CREATE TABLE Servico_a_ser_realizado(
+	funcionario_email VARCHAR2(50),
+  	ordServico_protocolo VARCHAR2(50),
+  	relatorio_codigo VARCHAR2(50),
+  	servico_codigo VARCHAR2(50), 
+
+  	CONSTRAINT funcionario_Aprova_pk PRIMARY KEY (funcionario_email, ordServico_protocolo),
+    CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+  	CONSTRAINT ordServico_Aprova  FOREIGN KEY (ordServico_protocolo) REFERENCES Ordem_de_servico(protocolo),
+  	CONSTRAINT relatorio_Aprova   FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio(codigo_relatorio),
+  	CONSTRAINT servico_Aprova     FOREIGN KEY (servico_codigo) REFERENCES Servico(codigo_servico));
+
+--Alterando Relatorio por causa da dependência ciclica
+
+ALTER TABLE Relatorio
+ADD (
+    email_funcionario VARCHAR2(50),
+    protocolo VARCHAR2(50),
+
+    CONSTRAINT servico_realizado_relatorio_fk FOREIGN KEY (email_funcionario, protocolo) REFERENCES Servico_a_ser_Realizado(funcionario_email, ordServico_protocolo));
+
+--Alterando Servico por causa da dependência ciclica
+
+ALTER TABLE Servico
+ADD (
+    email_funcionario VARCHAR2(50),
+    protocolo VARCHAR2(50),
+
+    CONSTRAINT servico_realizado_servico_fk FOREIGN KEY (email_funcionario, protocolo) REFERENCES Servico_a_ser_Realizado(funcionario_email, ordServico_protocolo));
 
 --Criando Tabela Protocolo de Atendimento e descrição com pk com autoincremento
 
@@ -215,26 +251,3 @@ BEGIN
   INTO   :new.descricao_n
   FROM   dual;
 END;
-
-CREATE TABLE Relatorio(
-    codigo_relatorio VARCHAR2(50)
-    email_funcionario VARCHAR2(50),
-    protocolo VARCHAR2(50),
-    descricao VARCHAR(50),
-
-    CONSTRAINT reltorio_pk PRIMARY KEY (codigo_relatorio),
-    CONSTRAINT email_funcionario_fk FOREIGN KEY (email_funcionario) REFERENCES Servico_a_ser_Realizado(email_funcionário),
-    CONSTRAINT protocolo_fk FOREIGN KEY (protocolo) REFERENCES Servico_a_ser_Realizado(protocolo_serviço));
-
-CREATE TABLE Servico(
-    codigo_servico VARCHAR2(50),
-    email_funcionario VARCHAR2(50),
-    protocolo VARCHAR2(50),
-    status VARCHAR(20),
-    data_inicio date,
-    data_conclusao date,
-
-    CONSTRAINT servico_pk PRIMARY KEY (codigo_servico),
-    CONSTRAINT email_funcionario_fk FOREIGN KEY (email_funcionario) REFERENCES Servico_a_ser_Realizado(email_funcionário),
-    CONSTRAINT protocolo_fk FOREIGN KEY (protocolo) REFERENCES Servico_a_ser_Realizado(protocolo_serviço));
-

@@ -74,6 +74,10 @@ INSERT INTO Endereco (cep, bairro, rua) VALUES ('98765-432', 'Bairro Lucas', 'Ru
 
 INSERT INTO Endereco (cep, bairro, rua) VALUES ('56789-012', 'Bairro Marina', 'Rua do Mar');
 
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('55689-042', 'Bairro Varla', 'Rua do LOL');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('01522-249', 'Bairro Joao Macedo', 'Rua da Caixa');
+
 
 --Inserindo Usuário
 
@@ -154,6 +158,10 @@ INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento) VALUES
 INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento) VALUES ('marina@email.com', 'senhaMarina', 'Marina Almeida', 27, '56789-012', '40', 'Bloco A, Ap. 15');
 
 INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento) VALUES ('gabriel@email.com', 'senha123', 'Gabriel Costa', 31, '98765-432', '5', 'Sala 7');
+
+INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento) VALUES ('julia@email.com', 'senha123w', 'Juliana Marian', 35, '55689-042', '5', 'Sala 7');
+
+INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento) VALUES ('rafael@email.com', 'sewwha123w', 'Rafael café', 35, '01522-249', '5', 'Sala 1');
 
 
 
@@ -311,34 +319,34 @@ INSERT INTO Cargos(cargo, salario) VALUES ('Analista', 'R$4.000,00');
 --Inserindo Funcionario
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('joao@email.com', 'Vendedor', '2020-05-15 09:00:00', 'pessoaQ@gmail.com');
+VALUES ('joao@email.com', 'Vendedor', TO_DATE('2003-12-08', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('maria@email.com', 'Analista', '2019-10-22 14:30:00', 'carlos@email.com');
+VALUES ('maria@email.com', 'Analista', TO_DATE('2023-01-14', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('pedro@email.com', 'Analista', '2021-03-10 11:45:00', 'carlos@email.com');
+VALUES ('pedro@email.com', 'Analista', TO_DATE('2010-08-19', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('ana@email.com', 'Analista', '2018-07-05 08:15:00', 'carlos@email.com');
+VALUES ('ana@email.com', 'Analista', TO_DATE('2012-05-19', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('carlos@email.com', 'Supervisor', '2017-12-18 10:20:00', NULL);
+VALUES ('carlos@email.com', 'Supervisor', TO_DATE('2013-04-19', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('lucas@email.com', 'Analista', '2022-01-03 13:10:00', 'carlos@email.com');
+VALUES ('lucas@email.com', 'Analista', TO_DATE('2001-08-19', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('marina@email.com', 'Vendedor', '2016-09-27 07:55:00', 'pessoaQ@gmail.com');
+VALUES ('marina@email.com', 'Vendedor', TO_DATE('2019-09-02', 'YYYY-MM-DD'), 'pessoaQ@gmail.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('gabriel@email.com', 'Analista', '2020-08-12 15:25:00', 'carlos@email.com');
+VALUES ('gabriel@email.com', 'Analista', TO_DATE('2013-04-19', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('julia@email.com', 'Pesquisador de Mercado', '2023-02-08 12:30:00', 'carlos@email.com');
+VALUES ('julia@email.com', 'Pesquisador de Mercado', TO_DATE('2015-03-08', 'YYYY-MM-DD'), 'carlos@email.com');
 
 INSERT INTO Funcionario (email_funcionario, cargo_func, data_contratacao, cad_supv)
-VALUES ('rafael@email.com', 'Programador', '2019-04-19 16:40:00', 'pessoaR@gmail.com');
+VALUES ('rafael@email.com', 'Programador', TO_DATE('2019-04-19', 'YYYY-MM-DD'), 'pessoaR@gmail.com');
 
 INSERT INTO Funcionario(email_funcionario, cargo_func, data_contratacao, cad_supv)
 VALUES ('pessoaQ@gmail.com', 'Supervisor', TO_DATE('2019-05-03', 'YYYY-MM-DD'), NULL);
@@ -721,34 +729,34 @@ INSERT INTO Pedido (id_pedido, data_pedido, descricao, preco, status, local_said
 -- Inserindo Pagamento
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8401335639), (TO_DATE('2023-07-21', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9000000009));
+VALUES ((8401335639), TO_DATE('2023-07-21', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9000000009));
      
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((9290883750), (TO_DATE('2023-06-15', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9010101019));
+VALUES ((9290883750), TO_DATE('2023-06-15', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9010101019));
     
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8725135577), (TO_DATE('2023-07-12', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (99020202029));
+VALUES ((8725135577), TO_DATE('2023-07-12', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (99020202029));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((2807999857), (TO_DATE('2023-05-28', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9131313139));
+VALUES ((2807999857), TO_DATE('2023-05-28', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9131313139));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((1089485343), (TO_DATE('2023-07-03', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9151515159));
+VALUES ((1089485343), TO_DATE('2023-07-03', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9151515159));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((7747535127), (TO_DATE('2023-05-05', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (9202020209));
+VALUES ((7747535127), TO_DATE('2023-05-05', 'YYYY-MM-DD'),('Cancelado'), ('Pix'), (9202020209));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((3441727099), (TO_DATE('2023-06-06', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9222222229));
+VALUES ((3441727099), TO_DATE('2023-06-06', 'YYYY-MM-DD'),('Processando'), ('Boleto'), (9222222229));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((8275845891), (TO_DATE('2023-07-07', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9242424249));
+VALUES ((8275845891), TO_DATE('2023-07-07', 'YYYY-MM-DD'),('Processando'), ('Em espécie'), (9242424249));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((9286776558), (TO_DATE('2023-07-01', 'YYYY-MM-DD'),('Cancelado'), ('Crédito'), (9242424249));
+VALUES ((9286776558), TO_DATE('2023-07-01', 'YYYY-MM-DD'),('Cancelado'), ('Crédito'), (9242424249));
 
 INSERT INTO Pagamento(id_pagamento, data_do_pagamento, status, metodo_do_pagamento, id_pedido) 
-VALUES ((1632102375), (TO_DATE('2023-06-30', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9424242429));
+VALUES ((1632102375), TO_DATE('2023-06-30', 'YYYY-MM-DD'),('Confirmado'), ('Crédito'), (9424242429));
         
 --Inserindo em Produto
 INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracteristicas, marca, categoria, pedido) VALUES (0101010101, 1, 'Mouse HyperX Pulsefire', 109.99,
