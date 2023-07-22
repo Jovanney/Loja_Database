@@ -511,34 +511,34 @@ INSERT INTO Produto (id_produto, quantidade, nome, preco, data_estoque, caracter
 --Inserindo Ordem_de_servico
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('AAAA1111', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Teclado', TO_DATE('2021-02-15', 'YYYY-MM-DD'));
+VALUES ('P001', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Teclado', TO_DATE('2021-02-15', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('BBBB2222', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
+VALUES ('P002', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('CCCC3333', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Carregador', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
+VALUES ('P003', 'pessoaAC@gmail.com', 'Defeito causado pelo transporte', 'Carregador', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('DDDD4444', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Notebook', TO_DATE('2022-01-05', 'YYYY-MM-DD'));
+VALUES ('P004', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Notebook', TO_DATE('2022-01-05', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('EEEE5555', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Processador', TO_DATE('2019-12-23', 'YYYY-MM-DD'));
+VALUES ('P005', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Processador', TO_DATE('2019-12-23', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('FFFF6666', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Fone de ouvido', TO_DATE('2022-02-15', 'YYYY-MM-DD'));
+VALUES ('P006', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Fone de ouvido', TO_DATE('2022-02-15', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('GGGG7777', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Mouse', TO_DATE('2023-11-19', 'YYYY-MM-DD'));
+VALUES ('P007', 'pessoaAE@gmail.com', 'Defeito causado pelo transporte', 'Mouse', TO_DATE('2023-11-19', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('HHHH8888', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Memória RAM', TO_DATE('2022-06-25', 'YYYY-MM-DD'));
+VALUES ('P008', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Memória RAM', TO_DATE('2022-06-25', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('IIII9999', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Disco SSD', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
+VALUES ('P009', 'pessoaAC@gmail.com', 'Defeito de fábrica', 'Disco SSD', TO_DATE('2021-05-23', 'YYYY-MM-DD'));
 
 INSERT INTO Ordem_de_servico(protocolo, email_func, descricao, produto, data_de_emissao) 
-VALUES ('JJJJ0000', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
+VALUES ('P010', 'pessoaAE@gmail.com', 'Defeito de fábrica', 'Placa de vídeo', TO_DATE('2020-07-12', 'YYYY-MM-DD'));
 
 --Inserindo Assistencia 
 
@@ -691,6 +691,54 @@ VALUES ('P009', '89012345678901', 9, 'Substituição de teclas quebradas', TO_DA
 INSERT INTO Protocolo_de_Atendimento (codigo_protocolo, cnpj, desc_pro, acoes_tomadas, data_inicio, data_conclusao)
 VALUES ('P010', '90123456789012', 10, 'Botão trocado', TO_DATE('2023-07-29', 'YYYY-MM-DD'), TO_DATE('2023-07-30', 'YYYY-MM-DD'));
 
+-- Inserindo no Relatorio_aux
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL001');
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL002');
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL003');
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL004');
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL005');
+
+INSERT INTO Relatorio_aux(codigo_relatorio_aux) VALUES ('REL006');
+
+-- Inserindo Servico_aux
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV001');
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV002');
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV003');
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV004');
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV005');
+
+INSERT INTO Servico_aux(codigo_servico_aux) VALUES ('SERV006');
+
+-- Inserindo Serviço a ser Realizado
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('joao@email.com', 'P001', 'REL001', 'SERV001');
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('maria@email.com', 'P002', 'REL002', 'SERV002');
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('pedro@email.com', 'P003', 'REL003', 'SERV003');
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('ana@email.com', 'P004', 'REL004', 'SERV004');
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('carlos@email.com', 'P005', 'REL005', 'SERV005');
+
+INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
+VALUES ('lucas@email.com', 'P006', 'REL006', 'SERV006');
+
 -- Inserindo Relatorio
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
 VALUES ('REL001', 'joao@email.com', 'P001', 'Relatório de vendas do mês');
@@ -728,49 +776,5 @@ VALUES ('SERV005', 'carlos@email.com', 'P005', 'Concluído', TO_DATE('2023-07-12
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
 VALUES ('SERV006', 'lucas@email.com', 'P006', 'Pendente', TO_DATE('2023-07-16', 'YYYY-MM-DD'), NULL);
-
-INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV007', 'marina@email.com', 'P007', 'Concluído', TO_DATE('2023-07-10', 'YYYY-MM-DD'), TO_DATE('2023-07-12', 'YYYY-MM-DD'));
-
-INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV008', 'gabriel@email.com', 'P008', 'Em andamento', TO_DATE('2023-07-17', 'YYYY-MM-DD'), NULL);
-
-INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV009', 'marina@email.com', 'P009', 'Pendente', TO_DATE('2023-07-20', 'YYYY-MM-DD'), NULL);
-
-INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV010', 'carlos@email.com', 'P010', 'Concluído', TO_DATE('2023-07-14', 'YYYY-MM-DD'), TO_DATE('2023-07-15', 'YYYY-MM-DD'));
-
--- Inserindo Serviço a ser Realizado
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaB@gmail.com', 'AAAA1111', 'REL001', 'SERV001');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaD@gmail.com', 'BBBB2222', 'REL002', 'SERV002');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaF@gmail.com', 'CCCC3333', 'REL003', 'SERV003');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaH@gmail.com', 'DDDD4444', 'REL004', 'SERV004');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaJ@gmail.com', 'EEEE5555', 'REL005', 'SERV005');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaL@gmail.com', 'FFFF6666', 'REL006', 'SERV006');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaN@gmail.com', 'GGGG7777', 'REL007', 'SERV007');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaP@gmail.com', 'HHHH8888', 'REL008', 'SERV008');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaR@gmail.com', 'IIII9999', 'REL009', 'SERV009');
-
-INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaT@gmail.com', 'JJJJ10101010', 'REL010', 'SERV010');
 
 
