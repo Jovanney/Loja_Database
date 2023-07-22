@@ -452,34 +452,34 @@ VALUES ('pessoaS@gmail.com', 'pessoaT@gmail.com','45678901234567');
 -- Inserindo Serviço a ser Realizado
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaB@gmail.com', 'AAAA1111', 'P001', 'P001');
+VALUES ('pessoaB@gmail.com', 'AAAA1111', 'REL001', 'SERV001');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaD@gmail.com', 'BBBB2222', 'P002', 'P002');
+VALUES ('pessoaD@gmail.com', 'BBBB2222', 'REL002', 'SERV002');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaF@gmail.com', 'CCCC3333', 'P003', 'P003');
+VALUES ('pessoaF@gmail.com', 'CCCC3333', 'REL003', 'SERV003');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaH@gmail.com', 'DDDD4444', 'P004', 'P004');
+VALUES ('pessoaH@gmail.com', 'DDDD4444', 'REL004', 'SERV004');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaJ@gmail.com', 'EEEE5555', 'P005', 'P005');
+VALUES ('pessoaJ@gmail.com', 'EEEE5555', 'REL005', 'SERV005');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaL@gmail.com', 'FFFF6666', 'P006', 'P006');
+VALUES ('pessoaL@gmail.com', 'FFFF6666', 'REL006', 'SERV006');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaN@gmail.com', 'GGGG7777', 'P007', 'P007');
+VALUES ('pessoaN@gmail.com', 'GGGG7777', 'REL007', 'SERV007');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaP@gmail.com', 'HHHH8888', 'P008', 'P008');
+VALUES ('pessoaP@gmail.com', 'HHHH8888', 'REL008', 'SERV008');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaR@gmail.com', 'IIII9999', 'P009', 'P009');
+VALUES ('pessoaR@gmail.com', 'IIII9999', 'REL009', 'SERV009');
 
 INSERT INTO Servico_a_ser_realizado(funcionario_email, ordservico_protocolo, relatorio_codigo, servico_codigo)
-VALUES ('pessoaT@gmail.com', 'JJJJ10101010', 'P010', 'P010');
+VALUES ('pessoaT@gmail.com', 'JJJJ10101010', 'REL010', 'SERV010');
 
 --Inserindo Assistencia 
 
