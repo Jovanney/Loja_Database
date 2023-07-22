@@ -62,6 +62,19 @@ INSERT INTO Endereco (cep, bairro, rua) VALUES ('33333-331','Bairro AD', 'Rua AD
 
 INSERT INTO Endereco (cep, bairro, rua) VALUES ('33333-332','Bairro AD', 'Rua AD');
 
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('12345-678', 'Bairro João', 'Rua da Silva');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('45678-901', 'Bairro Pedro', 'Rua da Amizade');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('54321-098', 'Bairro Ana', 'Rua do Progresso');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('13579-246', 'Bairro Carlos', 'Rua do Sol');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('98765-432', 'Bairro Lucas', 'Rua das Flores');
+
+INSERT INTO Endereco (cep, bairro, rua) VALUES ('56789-012', 'Bairro Marina', 'Rua do Mar');
+
+
 --Inserindo Usuário
 
 INSERT INTO Usuario (email, senha, nome, idade, cep, numero, complemento ) VALUES ('pessoaA@gmail.com','AAAAAA','Pessoa A', 18, '56800-000', '1', 'perto de A');
@@ -424,62 +437,50 @@ VALUES ('P010', '90123456789012', 10, 'Botão trocado', TO_DATE('2023-07-29', 'Y
 
 -- Inserindo Relatorio
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL001', 'joao@email.com', 'PROTO001', 'Relatório de vendas do mês');
+VALUES ('REL001', 'joao@email.com', 'P001', 'Relatório de vendas do mês');
 
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL002', 'maria@email.com', 'PROTO002', 'Relatório de desempenho do setor financeiro');
+VALUES ('REL002', 'maria@email.com', 'P002', 'Relatório de desempenho do setor financeiro');
 
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL003', 'pedro@email.com', 'PROTO001', 'Relatório de estoque atualizado');
+VALUES ('REL003', 'pedro@email.com', 'P003', 'Relatório de estoque atualizado');
 
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL004', 'ana@email.com', 'PROTO003', 'Relatório de análise de dados');
+VALUES ('REL004', 'ana@email.com', 'P004', 'Relatório de análise de dados');
 
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL005', 'carlos@email.com', 'PROTO002', 'Relatório de avaliação de projetos');
+VALUES ('REL005', 'carlos@email.com', 'P005', 'Relatório de avaliação de projetos');
 
 INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL006', 'lucas@email.com', 'PROTO004', 'Relatório de monitoramento de sistemas');
-
-INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL007', 'marina@email.com', 'PROTO001', 'Relatório de atendimento ao cliente');
-
-INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL008', 'gabriel@email.com', 'PROTO003', 'Relatório de marketing digital');
-
-INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL009', 'julia@email.com', 'PROTO004', 'Relatório de pesquisa de mercado');
-
-INSERT INTO Relatorio (codigo_relatorio, email_funcionario, protocolo, descricao)
-VALUES ('REL010', 'rafael@email.com', 'PROTO002', 'Relatório de desenvolvimento de produtos');
+VALUES ('REL006', 'lucas@email.com', 'P006', 'Relatório de monitoramento de sistemas');
 
 -- Inserindo Servico
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV001', 'joao@email.com', 'PROTO001', 'Em andamento', TO_DATE('2023-07-20', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV001', 'joao@email.com', 'P001', 'Em andamento', TO_DATE('2023-07-20', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV002', 'maria@email.com', 'PROTO002', 'Concluído', TO_DATE('2023-07-15', 'YYYY-MM-DD'), TO_DATE('2023-07-18', 'YYYY-MM-DD'));
+VALUES ('SERV002', 'maria@email.com', 'P002', 'Concluído', TO_DATE('2023-07-15', 'YYYY-MM-DD'), TO_DATE('2023-07-18', 'YYYY-MM-DD'));
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV003', 'pedro@email.com', 'PROTO003', 'Pendente', TO_DATE('2023-07-19', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV003', 'pedro@email.com', 'P003', 'Pendente', TO_DATE('2023-07-19', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV004', 'ana@email.com', 'PROTO002', 'Em andamento', TO_DATE('2023-07-18', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV004', 'ana@email.com', 'P004', 'Em andamento', TO_DATE('2023-07-18', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV005', 'carlos@email.com', 'PROTO004', 'Concluído', TO_DATE('2023-07-12', 'YYYY-MM-DD'), TO_DATE('2023-07-14', 'YYYY-MM-DD'));
+VALUES ('SERV005', 'carlos@email.com', 'P005', 'Concluído', TO_DATE('2023-07-12', 'YYYY-MM-DD'), TO_DATE('2023-07-14', 'YYYY-MM-DD'));
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV006', 'lucas@email.com', 'PROTO001', 'Pendente', TO_DATE('2023-07-16', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV006', 'lucas@email.com', 'P006', 'Pendente', TO_DATE('2023-07-16', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV007', 'marina@email.com', 'PROTO003', 'Concluído', TO_DATE('2023-07-10', 'YYYY-MM-DD'), TO_DATE('2023-07-12', 'YYYY-MM-DD'));
+VALUES ('SERV007', 'marina@email.com', 'P007', 'Concluído', TO_DATE('2023-07-10', 'YYYY-MM-DD'), TO_DATE('2023-07-12', 'YYYY-MM-DD'));
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV008', 'gabriel@email.com', 'PROTO004', 'Em andamento', TO_DATE('2023-07-17', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV008', 'gabriel@email.com', 'P008', 'Em andamento', TO_DATE('2023-07-17', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV009', 'marina@email.com', 'PROTO002', 'Pendente', TO_DATE('2023-07-20', 'YYYY-MM-DD'), NULL);
+VALUES ('SERV009', 'marina@email.com', 'P009', 'Pendente', TO_DATE('2023-07-20', 'YYYY-MM-DD'), NULL);
 
 INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_inicio, data_conclusao)
-VALUES ('SERV010', 'carlos@email.com', 'PROTO001', 'Concluído', TO_DATE('2023-07-14', 'YYYY-MM-DD'), TO_DATE('2023-07-15', 'YYYY-MM-DD'));
+VALUES ('SERV010', 'carlos@email.com', 'P010', 'Concluído', TO_DATE('2023-07-14', 'YYYY-MM-DD'), TO_DATE('2023-07-15', 'YYYY-MM-DD'));
