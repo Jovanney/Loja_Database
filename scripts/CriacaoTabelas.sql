@@ -72,6 +72,18 @@ CREATE TABLE Funcionario(
     CONSTRAINT cargo_fk FOREIGN KEY (cargo_func) REFERENCES Cargos(cargo));
 
 
+--Criando tabela Aciona
+
+CREATE TABLE Aciona(
+	cliente_email VARCHAR2(50),
+  	funcionario_email VARCHAR2(50),
+  	assistencia_cnpj VARCHAR2(14),
+  	CONSTRAINT cliente_Aciona FOREIGN KEY (cliente_email) REFERENCES Usuario(email),
+  	CONSTRAINT funcionario_Aciona FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+  	CONSTRAINT assitencia_Aciona FOREIGN KEY (assistencia_cnpj) REFERENCES Assistencia(cnpj)
+);
+
+
 --Criando tabela Ordem_de_servico
 
 CREATE TABLE Ordem_de_servico(
@@ -83,6 +95,20 @@ CREATE TABLE Ordem_de_servico(
 
     CONSTRAINT protocolo_pk PRIMARY KEY (protocolo),
     CONSTRAINT email_func_fk FOREIGN KEY (email_func) REFERENCES Funcionario(email_funcionario));
+
+--Criando tabela Serviço a ser realizado
+CREATE TABLE Servico_a_ser_realizado(
+	funcionario_email VARCHAR2(50),
+  	ordServico_protocolo VARCHAR2(50),
+  	relatorio_codigo VARCHAR2(50),
+  	servico_codigo VARCHAR2(50), 
+
+  	CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+  	CONSTRAINT ordServico_Aprova FOREIGN KEY (ordServico_protocolo) REFERENCES Ordem_de_servico(protocolo),
+  	CONSTRAINT relatorio_Aprova FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio(codigo_relatorio),
+  	CONSTRAINT servico_Aprova FOREIGN KEY (servico_codigo) REFERENCES Servico(codigo_servico)
+);
+
 
 -- Criando Tabela Transportadora
 CREATE TABLE Transportadora(
@@ -109,6 +135,19 @@ CREATE TABLE Pedido(
 	CONSTRAINT pedido_fkey1 FOREIGN KEY (cliente) REFERENCES Usuario (email),
 	CONSTRAINT pedido_fkey2 FOREIGN KEY (transportadora) REFERENCES Transportadora (cnpj));
 
+
+-- Criando Tabela Pagamento
+CREATE TABLE Pagamento(
+	id_pagamento number(10),
+	data_do_pagamento TIMESTAMP NOT NULL,
+	status VARCHAR2(20),
+	metodo_do_pagamento VARCHAR2(50),
+  	id_pedido number(10),
+  
+  	CONSTRAINT pagamento_pk PRIMARY KEY (id_pagamento),
+  	CONSTRAINT id_pedido_fk FOREIGN KEY (id_pedido) REFERENCES Pedido(id_pedido)
+  
+);
 
 -- Criando Tabela Produto
 CREATE TABLE Produto(
