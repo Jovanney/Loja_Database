@@ -172,19 +172,15 @@ CREATE TABLE TipoAssistencia(
     CONSTRAINT tipoassistencia_pkey PRIMARY KEY (tipo_assistencia, cnpj_assistencia),
     CONSTRAINT tipoassistencia_fkey FOREIGN KEY (cnpj_Assistencia) REFERENCES Assistencia(cnpj));
 
-CREATE TABLE Relatorio(
-    codigo_relatorio VARCHAR2(50),
-    descricao VARCHAR(50),
+CREATE TABLE Relatorio_aux(
+    codigo_relatorio_aux VARCHAR2(50),
 
-    CONSTRAINT relatorio_pk PRIMARY KEY (codigo_relatorio));
+    CONSTRAINT relatorio_aux_pk PRIMARY KEY (codigo_relatorio_aux));
 
-CREATE TABLE Servico(
-    codigo_servico VARCHAR2(50),
-    status VARCHAR(20),
-    data_inicio date,
-    data_conclusao date,
+CREATE TABLE Servico_aux(
+    codigo_servico_aux VARCHAR2(50),
 
-    CONSTRAINT servico_pk PRIMARY KEY (codigo_servico));
+    CONSTRAINT servico_aux_pk PRIMARY KEY (codigo_servico_aux));
 
 
 --Criando tabela Serviço a ser realizado
@@ -198,25 +194,31 @@ CREATE TABLE Servico_a_ser_realizado(
   	CONSTRAINT funcionario_Aprova_pk PRIMARY KEY (funcionario_email, ordServico_protocolo),
     CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
   	CONSTRAINT ordServico_Aprova  FOREIGN KEY (ordServico_protocolo) REFERENCES Ordem_de_servico(protocolo),
-  	CONSTRAINT relatorio_Aprova   FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio(codigo_relatorio),
-  	CONSTRAINT servico_Aprova     FOREIGN KEY (servico_codigo) REFERENCES Servico(codigo_servico));
+  	CONSTRAINT relatorio_Aprova   FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio_aux(codigo_relatorio_aux),
+  	CONSTRAINT servico_Aprova     FOREIGN KEY (servico_codigo) REFERENCES Servico_aux(codigo_servico_aux));
 
 --Alterando Relatorio por causa da dependência ciclica
 
-ALTER TABLE Relatorio
-ADD (
+CREATE TABLE Relatorio(
+    codigo_relatorio VARCHAR2(50),
+    descricao VARCHAR(50),
     email_funcionario VARCHAR2(50),
     protocolo VARCHAR2(50),
 
+    CONSTRAINT relatorio_pk PRIMARY KEY (codigo_relatorio),
     CONSTRAINT servico_realizado_relatorio_fk FOREIGN KEY (email_funcionario, protocolo) REFERENCES Servico_a_ser_Realizado(funcionario_email, ordServico_protocolo));
 
 --Alterando Servico por causa da dependência ciclica
 
-ALTER TABLE Servico
-ADD (
+CREATE TABLE Servico(
+    codigo_servico VARCHAR2(50),
+    status VARCHAR(20),
+    data_inicio date,
+    data_conclusao date,
     email_funcionario VARCHAR2(50),
     protocolo VARCHAR2(50),
 
+    CONSTRAINT servico_pk PRIMARY KEY (codigo_servico),
     CONSTRAINT servico_realizado_servico_fk FOREIGN KEY (email_funcionario, protocolo) REFERENCES Servico_a_ser_Realizado(funcionario_email, ordServico_protocolo));
 
 --Criando Tabela Protocolo de Atendimento e descrição com pk com autoincremento
