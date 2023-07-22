@@ -86,7 +86,6 @@ CREATE TABLE Ordem_de_servico(
 
 -- Criando Tabela Transportadora
 CREATE TABLE Transportadora(
-    nome VARCHAR2(50),
     cnpj VARCHAR2(14),
 	CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
 
