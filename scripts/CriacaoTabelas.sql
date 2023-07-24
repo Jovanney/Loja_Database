@@ -42,7 +42,6 @@ CREATE TABLE Cargo_func(
 
 CREATE TABLE Cliente(
     email_usuario VARCHAR(50),
-    cargo VARCHAR(50),
     data_criacao_Conta DATE NOT NULL,
 
     CONSTRAINT cliente_pk PRIMARY KEY (email_usuario),
