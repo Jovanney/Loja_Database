@@ -81,8 +81,8 @@ CREATE TABLE Ordem_de_servico(
 -- Criando Tabela Transportadora
 CREATE TABLE Transportadora(
     cnpj varchar2(14),
-	nome varchar2(50)
-	CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
+    nome varchar2(50),
+    CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
 
 
 -- Criando Tabela Pedido
