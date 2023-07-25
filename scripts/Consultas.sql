@@ -33,12 +33,12 @@ SELECT * FROM Pedido WHERE status = 'Cancelado'
 
 
 --BETWEEN
-SELECT * FROM Pedido WHERE preco BETWEEN 100 AND 500
+SELECT cliente, destino, preco, frete FROM Pedido WHERE preco BETWEEN 100 AND 500
 
 
 
 --IN
-SELECT * FROM Produto WHERE categoria IN ('Mouse', 'Teclado', 'Monitor');
+SELECT quantidade, nome, categoria, marca FROM Produto WHERE categoria IN ('Mouse', 'Teclado', 'Monitor');
 
 
 
