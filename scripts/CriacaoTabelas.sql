@@ -88,7 +88,8 @@ CREATE TABLE Ordem_de_servico(
 
 -- Criando Tabela Transportadora
 CREATE TABLE Transportadora(
-    cnpj VARCHAR2(14),
+    cnpj varchar2(14),
+	nome varchar2(50)
 	CONSTRAINT transportadora_pkey PRIMARY KEY (cnpj));
 
 
@@ -108,7 +109,7 @@ CREATE TABLE Pedido(
 	frete number(5,2),
 	status varchar2(20),
 	CONSTRAINT pedido_pkey PRIMARY KEY (id_pedido),
-	CONSTRAINT pedido_fkey1 FOREIGN KEY (cliente) REFERENCES Usuario (email),
+	CONSTRAINT pedido_fkey1 FOREIGN KEY (cliente) REFERENCES Cliente (email_usuario),
 	CONSTRAINT pedido_fkey2 FOREIGN KEY (transportadora) REFERENCES Transportadora (cnpj));
 
 
