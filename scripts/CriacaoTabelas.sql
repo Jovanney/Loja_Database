@@ -30,14 +30,6 @@ CREATE TABLE Telefone(
     CONSTRAINT telefone_pk PRIMARY KEY (numero, email_usuario),
     CONSTRAINT email_usuario_fk FOREIGN KEY (email_usuario) REFERENCES Usuario (email));
 
---Criando Cargo_func
-
-CREATE TABLE Cargo_func(
-    cargo  VARCHAR(50),
-    salario VARCHAR(50),
-
-    CONSTRAINT cargo_func__pk PRIMARY KEY (cargo));
-
 --Criando tabela Cliente
 
 CREATE TABLE Cliente(
