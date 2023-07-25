@@ -67,9 +67,9 @@ CREATE TABLE Funcionario(
 --Criando tabela Ordem_de_servico
 
 CREATE TABLE Ordem_de_servico(
-    protocolo VARCHAR2(50) NOT NULL,
+    protocolo VARCHAR2(50),
     email_func VARCHAR2(50),
-    descricao VARCHAR2(100),
+    descricao VARCHAR2(100) NOT NULL,
     produto VARCHAR2(50) NOT NULL,
     data_de_emissao timestamp NOT NULL,
 
@@ -150,8 +150,8 @@ CREATE TABLE Aciona(
 	cliente_email VARCHAR2(50),
   	funcionario_email VARCHAR2(50),
   	assistencia_cnpj VARCHAR2(14),
-  	CONSTRAINT cliente_aciona FOREIGN KEY (cliente_email) REFERENCES Usuario(email),
-  	CONSTRAINT funcionario_aciona FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+  	CONSTRAINT cliente_aciona FOREIGN KEY (cliente_email) REFERENCES Cliente(email_usuario),
+  	CONSTRAINT funcionario_aciona FOREIGN KEY (funcionario_email) REFERENCES Funcionario(email_funcionario),
   	CONSTRAINT assitencia_aciona FOREIGN KEY (assistencia_cnpj) REFERENCES Assistencia(cnpj)
 );
 
@@ -184,7 +184,7 @@ CREATE TABLE Servico_a_ser_realizado(
   	servico_codigo VARCHAR2(50), 
 
   	CONSTRAINT funcionario_Aprova_pk PRIMARY KEY (funcionario_email, ordServico_protocolo),
-    CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Usuario(email),
+        CONSTRAINT funcionario_Aprova FOREIGN KEY (funcionario_email) REFERENCES Funcionario(email_funcionario),
   	CONSTRAINT ordServico_Aprova  FOREIGN KEY (ordServico_protocolo) REFERENCES Ordem_de_servico(protocolo),
   	CONSTRAINT relatorio_Aprova   FOREIGN KEY (relatorio_codigo) REFERENCES Relatorio_aux(codigo_relatorio_aux),
   	CONSTRAINT servico_Aprova     FOREIGN KEY (servico_codigo) REFERENCES Servico_aux(codigo_servico_aux));
