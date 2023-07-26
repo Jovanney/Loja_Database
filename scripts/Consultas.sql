@@ -135,7 +135,7 @@ WHERE cargo_func = 'Supervisor';
 
 
 
---USO DE ESTRUTURA DE DADOS DO TIPO TABLE
+--USO DE ESTRUTURA DE DADOS DO TIPO TABLE, %ROWTYPE
 
 DECLARE
 	TYPE usuario_tb IS TABLE OF Usuario%rowtype
@@ -339,6 +339,25 @@ END;
 
 --CURSOR (OPEN, FETCH e CLOSE)
 
+DECLARE
+	nome_produto produto.nome%TYPE;
+	caracteristicas_produto produto.caracteristicas%TYPE;
+	marca_produto produto.marca%TYPE;
+	categoria_produto produto.categoria%TYPE;
+
+	CURSOR produtos_e IS
+    	SELECT P.nome, P.caracteristicas, P.marca, P.categoria
+        FROM Produto P;
+BEGIN
+    OPEN produtos_e;
+LOOP
+    FETCH produtos_e INTO nome_produto, caracteristicas_produto, marca_produto, categoria_produto;
+	EXIT WHEN produtos_e%NOTFOUND;
+	DBMS_OUTPUT.PUT_LINE('Nome do Produto: ' || nome_produto ||' Marca: ' || marca_produto || ' Características: ' || caracteristicas_produto || ' Categoria: ' || categoria_produto);
+END LOOP;
+
+CLOSE produtos_e;
+END;
 
 
 --EXCEPTION WHEN
