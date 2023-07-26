@@ -237,6 +237,25 @@ EXECUTE pegar_qtd_pedidos('pessoaP@gmail.com');
 
 --CREATE FUNCTION
 
+CREATE OR REPLACE FUNCTION total_gasto(email_in Cliente.email_usuario%TYPE)
+RETURN NUMBER IS
+total NUMBER;
+BEGIN
+    SELECT SUM(P.preco) INTO total from Pedido P
+    INNER JOIN Cliente C ON (C.email_usuario = P.cliente)
+    WHERE C.email_usuario LIKE email_in;
+
+	RETURN total;
+END total_gasto;
+
+/
+DECLARE
+    valor_re NUMBER;
+BEGIN 
+    valor_re := total_gasto('pessoaA@gmail.com');
+	DBMS_OUTPUT.PUT_LINE('Total gasto: ' || valor_re);
+END;
+/
 
 
 --%TYPE
