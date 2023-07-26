@@ -42,7 +42,7 @@ SELECT quantidade, nome, categoria, marca FROM Produto WHERE categoria IN ('Mous
 
 
 
---LIKE
+--LIKE, INNER JOIN
 --Selecionando todos os pedidos que possuem um pagamento associado e o status do pagamento foi confirmado
 
 SELECT *
@@ -52,16 +52,13 @@ WHERE pg.status LIKE 'Confirmado';
 
 
 
---IS NULL ou IS NOT NULL
+--IS NULL ou IS NOT NULL, COUNT
 --Selecionando a quantidade de funcionário que não são supervisionado por nenhum outro funcionário
 
 SELECT COUNT(*) AS Sem_supervisor
 FROM Funcionario f
 WHERE f.cad_supv IS NULL;
 
-
-
---INNER JOIN
 
 
 
@@ -75,7 +72,7 @@ WHERE salario = (SELECT MAX(salario) FROM Cargos);
 SELECT nome, preco FROM Produto
 WHERE preco = (SELECT MIN(preco) FROM Produto);
 
---AVG
+--AVG, SUBCONSULTA COM OPERADOR RELACIONAL
 --Selecionando todos os usuários que a idade é maior que a média da idade de todos os usuários
 
 SELECT u.email, u.nome, u.idade
@@ -83,12 +80,7 @@ FROM Usuario u
 WHERE u.idade > (SELECT AVG(u2.idade) FROM Usuario u2);
 
 
-
---COUNT
-
-
-
---LEFT ou RIGHT ou FULL OUTER JOIN
+--LEFT ou RIGHT ou FULL OUTER JOIN, ORDER BY
 --Selecionando o Endereco e o Telefone dos usuários
 
 SELECT u.email, u.nome, e.bairro, e.rua, t.numero
@@ -98,11 +90,6 @@ ON u.cep = e.cep
 LEFT OUTER JOIN Telefone t
 ON u.email = t.email_usuario
 ORDER BY u.nome;
-
-
-
---SUBCONSULTA COM OPERADOR RELACIONAL
-
 
 
 --SUBCONSULTA COM IN
@@ -150,6 +137,24 @@ WHERE cargo_func = 'Supervisor';
 
 --USO DE ESTRUTURA DE DADOS DO TIPO TABLE
 
+DECLARE
+	TYPE usuario_tb IS TABLE OF Usuario%rowtype
+	INDEX BY BINARY_INTEGER;
+
+	modelo_t usuario_tb;
+BEGIN 
+	modelo_t(1).email := 'jjsl@cin.ufpe.br';
+	modelo_t(1).senha := '123Jova';
+	modelo_t(1).nome := 'Jovanney';
+	modelo_t(1).idade := 19;
+	modelo_t(1).cep := 50740535;
+	modelo_t(1).numero := '123123123123';
+	modelo_t(1).complemento := 'A perto de B';
+
+	DBMS_OUTPUT.PUT_LINE('Email: '|| modelo_t(1).email);
+
+END;
+
 
 
 --BLOCO ANÔNIMO
@@ -184,6 +189,23 @@ END;
 
 --CREATE PROCEDURE
 
+CREATE OR REPLACE PROCEDURE pegar_qtd_pedidos(email_in usuario.email%TYPE)
+IS
+    pedidoqtd NUMBER;
+    nome usuario.nome%TYPE;
+BEGIN
+	SELECT COUNT(*) INTO pedidoqtd FROM Pedido P
+    INNER JOIN Usuario U ON (P.cliente = U.email)
+    WHERE U.email = email_in;
+
+	SELECT U.nome INTO nome from Usuario U
+    WHERE U.email = email_in;
+    
+    DBMS_OUTPUT.PUT_LINE('Usuário: ' || nome || ' Pedidos: ' || pedidoqtd );
+END pegar_qtd_pedidos;
+/
+EXECUTE pegar_qtd_pedidos('pessoaP@gmail.com');
+/
 
 
 --CREATE FUNCTION
