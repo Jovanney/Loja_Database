@@ -67,11 +67,13 @@ WHERE f.cad_supv IS NULL;
 
 --MAX
 
-
+SELECT cargo, salario FROM Cargos
+WHERE salario = (SELECT MAX(salario) FROM Cargos);
 
 --MIN
 
-
+SELECT nome, preco FROM Produto
+WHERE preco = (SELECT MIN(preco) FROM Produto);
 
 --AVG
 --Selecionando todos os usuários que a idade é maior que a média da idade de todos os usuários
@@ -105,7 +107,8 @@ ORDER BY u.nome;
 
 --SUBCONSULTA COM IN
 
-
+SELECT id_pedido, cliente, preco, status FROM Pedido
+WHERE cliente IN (SELECT cliente FROM Pedido WHERE id_pedido = '9131313139');
 
 --SUBCONSULTA COM ANY
 
@@ -119,21 +122,23 @@ ORDER BY u.nome;
 
 
 
---GROUP BY
+--GROUP BY / HAVING
 
-
-
---HAVING
-
-
+SELECT id_pedido, SUM(preco) as preco_pedido FROM Pedido
+GROUP BY id_pedido
+HAVING SUM(preco) > 500;
 
 --UNION ou INTERSECT ou MINUS
 
-
+SELECT email_usuario FROM Cliente
+UNION
+SELECT email_funcionario FROM Funcionario;
 
 --CREATE VIEW
 
-
+CREATE VIEW Funcionarios AS
+SELECT email_funcionario, cargo_func FROM Funcionario
+WHERE cargo_func = 'Supervisor';
 
 --GRANT / REVOKE
 
