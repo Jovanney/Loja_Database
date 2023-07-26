@@ -98,11 +98,19 @@ SELECT id_pedido, cliente, preco, status FROM Pedido
 WHERE cliente IN (SELECT cliente FROM Pedido WHERE id_pedido = '9131313139');
 
 --SUBCONSULTA COM ANY
+select c.email_usuario, count(*) as quantidade
+    from cliente c, pedido p where c.email_usuario= p.cliente and p.transportadora =  
+    any(select cnpj from Transportadora where nome in ('aspas', 'Less'))
+    Group by c.email_usuario having count(*) > 1;
 
 
 
 --SUBCONSULTA COM ALL
 
+select c.email_usuario, p.preco 
+        from cliente c, pedido p 
+        where c.email_usuario= p.cliente and p.preco > all
+        (select preco from pedido where local_saida = 'Armazem 1 - São Paulo');
 
 
 --ORDER BY
@@ -133,6 +141,25 @@ WHERE cargo_func = 'Supervisor';
 
 --USO DE RECORD
 
+declare
+    TYPE cliente_pedido IS RECORD (
+	email cliente.email_usuario%type,
+    	quantidade number
+    	
+    );
+
+	v_cliente_pedido cliente_pedido;
+begin
+    select c.email_usuario, count(*) into v_cliente_pedido.email, v_cliente_pedido.quantidade 
+    from cliente c, pedido p where c.email_usuario = p.cliente and c.email_usuario = 'pessoaC@gmail.com' group by c.email_usuario;
+	
+	DBMS_OUTPUT.PUT_LINE('nome cliente: ' || v_cliente_pedido.email );
+	DBMS_OUTPUT.PUT_LINE('quantidade de pedidos: ' || v_cliente_pedido.quantidade );
+
+	
+	
+end; 
+/
 
 
 --USO DE ESTRUTURA DE DADOS DO TIPO TABLE, %ROWTYPE
@@ -262,6 +289,30 @@ END;
 
 
 --CASE WHEN
+declare
+    TYPE cliente_pedido IS RECORD (
+		email cliente.email_usuario%type,
+    	quantidade number
+    	
+    );
+
+	v_cliente_pedido cliente_pedido;
+begin
+    select c.email_usuario, count(*) into v_cliente_pedido.email, v_cliente_pedido.quantidade 
+    from cliente c, pedido p where c.email_usuario = p.cliente and c.email_usuario = 'pessoaC@gmail.com' group by c.email_usuario;
+	
+	DBMS_OUTPUT.PUT_LINE('nome cliente: ' || v_cliente_pedido.email );
+	case 
+    when v_cliente_pedido.quantidade  <= 5
+        then  DBMS_OUTPUT.PUT_LINE('cliente fez menos de 5 pedidos ' );
+	else
+         DBMS_OUTPUT.PUT_LINE('cliente mais de 5 pedidos ' );
+	end case;
+
+	
+	
+end; 
+/
 
 
 
@@ -362,7 +413,21 @@ END;
 
 --EXCEPTION WHEN
 
+declare
+ 	v_transportadora transportadora.cnpj%type := 90000001000009;
+	v_nome_transportadora transportadora.nome%type;
+	
+	
+begin
+    select nome into v_nome_transportadora from transportadora where cnpj = v_transportadora;
+	dbms_output.put_line (v_nome_transportadora);
+	exception
+        when NO_DATA_FOUND THEN
+			dbms_output.put_line ('transportadora não encontrada');
 
+    
+end;
+/
 
 --USO DE PAR METROS (IN, OUT ou IN OUT)
 
