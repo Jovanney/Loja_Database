@@ -796,3 +796,22 @@ INSERT INTO Servico (codigo_servico, email_funcionario, protocolo, status, data_
 VALUES ('SERV006', 'lucas@email.com', 'P006', 'Pendente', TO_DATE('2023-07-16', 'YYYY-MM-DD'), NULL);
 
 
+SELECT * FROM Endereco E;
+SELECT * FROM Usuario U;
+SELECT * FROM Telefone T;
+SELECT * FROM Cliente C;
+SELECT * FROM Cargo Ca;
+SELECT * FROM Funcionario F;
+SELECT * FROM Transportadora Tr;
+SELECT * FROM Pedido Pe; 
+SELECT * FROM Produto Pr; 
+SELECT * FROM Pagamento Pg; 
+SELECT * FROM Ordem_de_servico Os; 
+SELECT * FROM Assistencia Ass;
+SELECT * FROM Aciona Ac;
+SELECT * FROM TipoAssistencia TA; 
+SELECT * FROM Descricao De;
+SELECT * FROM Protocolo_de_Atendimento Pa; 
+SELECT * FROM Servico_a_ser_realizado Sr;
+SELECT * FROM Relatorio Re;
+SELECT * FROM Servico Se;
