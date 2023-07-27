@@ -113,9 +113,6 @@ select c.email_usuario, p.preco
         (select preco from pedido where local_saida = 'Armazem 1 - São Paulo');
 
 
---ORDER BY
-
-
 
 --GROUP BY / HAVING
 
