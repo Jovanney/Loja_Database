@@ -447,6 +447,36 @@ end;
 
 --USO DE PAR METROS (IN, OUT ou IN OUT)
 
+ --  Consulta de usuário pelo e-mail
+
+CREATE OR REPLACE PROCEDURE ConsultarUsuario(
+    p_email IN VARCHAR2,
+    p_nome OUT VARCHAR2,
+    p_idade OUT NUMBER
+) AS
+BEGIN
+    SELECT nome, idade INTO p_nome, p_idade
+    FROM Usuario
+    WHERE email = p_email;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        -- Caso não encontre nenhum usuário com o email fornecido, definir os parâmetros OUT como nulos
+        p_nome := NULL;
+        p_idade := NULL;
+END;
+/
+
+DECLARE
+    v_nome VARCHAR2(50);
+    v_idade NUMBER;
+BEGIN
+    ConsultarUsuario('pessoaF@gmail.com', v_nome, v_idade);
+    DBMS_OUTPUT.PUT_LINE('Nome: ' || v_nome);
+    DBMS_OUTPUT.PUT_LINE('Idade: ' || v_idade);
+END;
+/
+
+
 
 
 --CREATE OR REPLACE PACKAGE
@@ -489,10 +519,42 @@ END;
 
 
 --CREATE OR REPLACE TRIGGER (COMANDO)
+--  Esse trigger garante que quando um pedido for excluído, todos os pagamentos associados a esse pedido sejam marcados como "Cancelados" na tabela "Pagamento".
+
+CREATE OR REPLACE TRIGGER CancelarPagamentosPedido
+AFTER DELETE ON Pedido
+FOR EACH ROW
+DECLARE
+    v_id_pedido NUMBER;
+BEGIN
+    v_id_pedido := :OLD.id_pedido;
+
+    FOR pagamento_rec IN (SELECT id_pagamento FROM Pagamento WHERE id_pedido = v_id_pedido)
+    LOOP
+        UPDATE Pagamento
+        SET status = 'Cancelado', data_do_pagamento = SYSDATE
+        WHERE id_pagamento = pagamento_rec.id_pagamento;
+    END LOOP;
+
+    DBMS_OUTPUT.PUT_LINE('Os pagamentos do pedido ' || v_id_pedido || ' foram cancelados.');
+END;
+/
+
 
 
 
 --CREATE OR REPLACE TRIGGER (LINHA)
+-- Se o método de pagamento for boleto, atualize o status do método de pagamento para ‘Processando’’
+
+CREATE OR REPLACE TRIGGER AtualizarStatusPagamento
+BEFORE INSERT ON Pagamento
+FOR EACH ROW	
+BEGIN
+    IF :NEW.metodo_do_pagamento = 'Boleto' THEN
+        :NEW.status := 'Processando';
+    END IF;
+END;
+/
 
 
 
